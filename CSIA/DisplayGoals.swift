@@ -20,6 +20,14 @@ class DisplayGoals: UIViewController, UITableViewDelegate, UITableViewDataSource
         return cell
     }
     
+
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == UITableViewCellEditingStyle.delete {
+            print("This is where the deleting-a-goal logic will be")
+            tableView.reloadData()
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -29,6 +37,20 @@ class DisplayGoals: UIViewController, UITableViewDelegate, UITableViewDataSource
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    //We can't use viewDidLoad(), since all the elements might not have loaded yet
+    //ViewDidAppear makes sure that the view has appeared
+    override func viewDidAppear(_ animated: Bool) {
+        //If there is an object there, then the output equals it
+        //forKey, use a loop that loops through the existing keys
+       // if //keys exists
+      //  globalVariables.KeyNumber = object.count
+        
+        if UserDefaults.standard.object(forKey: "1title") != nil {
+         //   globalVariables.KeyNumber = //objects in the userdfault divided by 2
+        }
+
     }
     
 

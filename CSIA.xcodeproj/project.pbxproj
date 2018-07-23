@@ -14,6 +14,10 @@
 		F570D6632105CAEA0069FF1F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F570D6612105CAEA0069FF1F /* LaunchScreen.storyboard */; };
 		F570D66B2105D3E60069FF1F /* DisplayGoals.swift in Sources */ = {isa = PBXBuildFile; fileRef = F570D66A2105D3E60069FF1F /* DisplayGoals.swift */; };
 		F570D66D2105DD970069FF1F /* DisplayReflections.swift in Sources */ = {isa = PBXBuildFile; fileRef = F570D66C2105DD970069FF1F /* DisplayReflections.swift */; };
+		F570D6712105E6380069FF1F /* Graph.swift in Sources */ = {isa = PBXBuildFile; fileRef = F570D6702105E6380069FF1F /* Graph.swift */; };
+		F570D67521061C180069FF1F /* Goal.swift in Sources */ = {isa = PBXBuildFile; fileRef = F570D67421061C180069FF1F /* Goal.swift */; };
+		F570D67921061CC30069FF1F /* AddGoal.swift in Sources */ = {isa = PBXBuildFile; fileRef = F570D67821061CC30069FF1F /* AddGoal.swift */; };
+		F570D67B21062DF00069FF1F /* GlobalVariables.swift in Sources */ = {isa = PBXBuildFile; fileRef = F570D67A21062DF00069FF1F /* GlobalVariables.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +30,10 @@
 		F570D6642105CAEA0069FF1F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F570D66A2105D3E60069FF1F /* DisplayGoals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayGoals.swift; sourceTree = "<group>"; };
 		F570D66C2105DD970069FF1F /* DisplayReflections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayReflections.swift; sourceTree = "<group>"; };
+		F570D6702105E6380069FF1F /* Graph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Graph.swift; sourceTree = "<group>"; };
+		F570D67421061C180069FF1F /* Goal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Goal.swift; sourceTree = "<group>"; };
+		F570D67821061CC30069FF1F /* AddGoal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGoal.swift; sourceTree = "<group>"; };
+		F570D67A21062DF00069FF1F /* GlobalVariables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalVariables.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,7 +68,11 @@
 			children = (
 				F570D6582105CAEA0069FF1F /* AppDelegate.swift */,
 				F570D65A2105CAEA0069FF1F /* ViewController.swift */,
+				F570D67821061CC30069FF1F /* AddGoal.swift */,
+				F570D67A21062DF00069FF1F /* GlobalVariables.swift */,
 				F570D66A2105D3E60069FF1F /* DisplayGoals.swift */,
+				F570D6702105E6380069FF1F /* Graph.swift */,
+				F570D67421061C180069FF1F /* Goal.swift */,
 				F570D66C2105DD970069FF1F /* DisplayReflections.swift */,
 				F570D65C2105CAEA0069FF1F /* Main.storyboard */,
 				F570D65F2105CAEA0069FF1F /* Assets.xcassets */,
@@ -142,10 +154,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F570D6712105E6380069FF1F /* Graph.swift in Sources */,
 				F570D66B2105D3E60069FF1F /* DisplayGoals.swift in Sources */,
+				F570D67B21062DF00069FF1F /* GlobalVariables.swift in Sources */,
 				F570D65B2105CAEA0069FF1F /* ViewController.swift in Sources */,
 				F570D6592105CAEA0069FF1F /* AppDelegate.swift in Sources */,
+				F570D67521061C180069FF1F /* Goal.swift in Sources */,
 				F570D66D2105DD970069FF1F /* DisplayReflections.swift in Sources */,
+				F570D67921061CC30069FF1F /* AddGoal.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
