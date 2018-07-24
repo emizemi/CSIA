@@ -47,9 +47,14 @@ class DisplayGoals: UIViewController, UITableViewDelegate, UITableViewDataSource
        // if //keys exists
       //  globalVariables.KeyNumber = object.count
         
-        if UserDefaults.standard.object(forKey: "1title") != nil {
-         //   globalVariables.KeyNumber = //objects in the userdfault divided by 2
-        }
+      //  if UserDefaults.standard.object(forKey: "1title") != nil {
+            var count = 0
+              repeat{
+                count = count + 1
+            } while UserDefaults.standard.object(forKey: String(count) + "title") != nil
+            globalVariables.KeyNumber = count - 1
+        print(globalVariables.KeyNumber)
+       // }
 
     }
     
