@@ -16,14 +16,32 @@ class DisplayGoals: UIViewController, UITableViewDelegate, UITableViewDataSource
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = String(indexPath.row)
+        cell.textLabel?.text = UserDefaults.standard.string(forKey: String(indexPath.row) + "title")
         return cell
     }
     
 
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == UITableViewCellEditingStyle.delete {
-            print("This is where the deleting-a-goal logic will be")
+        //    print("This is where the deleting-a-goal logic will be")
+            
+            UserDefaults.standard.removeObject(forKey: String(indexPath.row) + "title")
+            UserDefaults.standard.removeObject(forKey: String(indexPath.row) + "description")
+            globalVariables.KeyNumber = globalVariables.KeyNumber - 1
+            
+            print("---Start---")
+            print("This is the globlVariables.keyNumber")
+            print(globalVariables.KeyNumber)
+            print("---end---")
+            
+            var currentRow = indexPath.row
+            
+            repeat{
+                UserDefaults.standard.set(UserDefaults.standard.object(forKey: String(currentRow + 1) + "title"), forKey: String(currentRow) + "title")
+                UserDefaults.standard.set(UserDefaults.standard.object(forKey: String(currentRow + 1) + "description"), forKey: String(currentRow) + "description")
+                currentRow = currentRow + 1
+            }while UserDefaults.standard.object(forKey: String(currentRow) + "title") != nil
+            
             tableView.reloadData()
         }
     }
@@ -42,20 +60,15 @@ class DisplayGoals: UIViewController, UITableViewDelegate, UITableViewDataSource
     //We can't use viewDidLoad(), since all the elements might not have loaded yet
     //ViewDidAppear makes sure that the view has appeared
     override func viewDidAppear(_ animated: Bool) {
-        //If there is an object there, then the output equals it
-        //forKey, use a loop that loops through the existing keys
-       // if //keys exists
-      //  globalVariables.KeyNumber = object.count
-        
-      //  if UserDefaults.standard.object(forKey: "1title") != nil {
-            var count = 0
+            var count = -1
               repeat{
                 count = count + 1
             } while UserDefaults.standard.object(forKey: String(count) + "title") != nil
             globalVariables.KeyNumber = count - 1
+        print("---Start---")
+        print("This is the globlVariables.keyNumber")
         print(globalVariables.KeyNumber)
-       // }
-
+        print("---end---")
     }
     
 

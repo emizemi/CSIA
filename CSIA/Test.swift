@@ -14,23 +14,22 @@ class Test: UIViewController {
         super.viewDidLoad()
 
 
-        //Printing the specific data type (e.g. Int) in UserDefaults
-            print(UserDefaults.standard.integer(forKey: "numberz"))
         
-        //Removing an object with that specific key
-            UserDefaults.standard.removeObject(forKey: "numberz")
-
-        
-        //If you ever want to delete everything in the UserDefaults, just set "test"
-        //as the initial view controller and run this code.
         var count = 0
         repeat{
-            count = count + 1
+
             UserDefaults.standard.removeObject(forKey: String(count) + "title")
             UserDefaults.standard.removeObject(forKey: String(count) + "description")
+            count = count + 1
         } while UserDefaults.standard.object(forKey: String(count) + "title") != nil
         
+        //Instant delete something
+        UserDefaults.standard.removeObject(forKey: String(2) + "title")
+        UserDefaults.standard.removeObject(forKey: String(2) + "description")
         
+        print("all values")
+        print(UserDefaults.standard.dictionaryRepresentation())
+        print("good to go")
         // Do any additional setup after loading the view.
     }
 

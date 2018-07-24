@@ -9,6 +9,6 @@
 import Foundation
 
 struct globalVariables {
-    static var KeyNumber = 0
+    static var KeyNumber = -1
     
 }

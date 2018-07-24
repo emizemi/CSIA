@@ -30,7 +30,7 @@ class AddGoal: UIViewController {
         //The key will be a number, so whenever titleInput is added, it incremenets by 1\
         globalVariables.KeyNumber = globalVariables.KeyNumber + 1
         
-        let currentTitleKey = String(globalVariables.KeyNumber) + "global"
+        let currentTitleKey = String(globalVariables.KeyNumber) + "title"
         let currentDescriptionKey = String(globalVariables.KeyNumber) + "description"
         UserDefaults.standard.set(titleInput.text, forKey: currentTitleKey)
         UserDefaults.standard.set(descriptionInput.text, forKey: currentDescriptionKey)

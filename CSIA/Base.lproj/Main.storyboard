@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4qt-Sb-Ypf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zRH-ff-jXE">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -172,6 +172,9 @@
                         <viewLayoutGuide key="safeArea" id="93m-4P-cHu"/>
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="search" id="9V6-m5-oaO"/>
+                    <connections>
+                        <segue destination="84x-EW-0uN" kind="show" identifier="segue" id="1WO-Oa-h5Y"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tai-bx-u5x" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -222,14 +225,14 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Type your goal..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="vbe-99-BfK">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="vbe-99-BfK">
                                 <rect key="frame" x="56" y="120" width="240" height="59"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Add a description about your goal. Be sure to include any additional notes..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="VIm-xt-Y0s">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="VIm-xt-Y0s">
                                 <rect key="frame" x="56" y="311" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -325,14 +328,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U4A-XK-3e8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1847" y="-602"/>
+            <point key="canvasLocation" x="1130" y="-600"/>
         </scene>
     </scenes>
     <resources>
         <image name="SolidBlackColor" width="1920" height="1080"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="SQc-zF-0Nd"/>
         <segue reference="mvw-Fe-jfj"/>
     </inferredMetricsTieBreakers>
 </document>
