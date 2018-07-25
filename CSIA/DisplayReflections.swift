@@ -96,11 +96,10 @@ class DisplayReflections: UIViewController, UITableViewDelegate, UITableViewData
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reflectionCell", for: indexPath)
         
-
-        
         let text: String!
         if isSearching {
             text = filteredData[indexPath.row]
+            cell.textLabel?.text = text
         } else {
         cell.textLabel?.text = UserDefaults.standard.string(forKey: String(indexPath.row) + "reflectionDateAdded")
         }
