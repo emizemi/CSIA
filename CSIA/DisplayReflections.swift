@@ -8,16 +8,32 @@
 
 import UIKit
 
-class DisplayReflections: UIViewController, UITableViewDelegate, UITableViewDataSource{
+// PUT BACK UISearchResultsUpdating
+class DisplayReflections: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
     
+    @IBOutlet weak var tableView: UITableView!
+    var filteredDateAddedArray = [String]()
+
+    var searchController = UISearchController()
+    var resultsController = UITableViewController()
+    
+    //WE NEED TO DO THIS... GLOBAL VARIALBE?
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     //We can't do "return globalVariables.reflectionKey + 1" because the variables haven't loaded
+    //    if tableView == resultsController.tableView {
+    //        return filteredDateAddedArray.count
+     //   }
         return 10
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reflectionCell", for: indexPath)
-        cell.textLabel?.text = UserDefaults.standard.string(forKey: String(indexPath.row) + "reflectionDateAdded")
+
+        if tableView == resultsController.tableView {
+            cell.textLabel?.text = filteredDateAddedArray[indexPath.row]
+        } else {
+            cell.textLabel?.text = UserDefaults.standard.string(forKey: String(indexPath.row) + "reflectionDateAdded")
+        }
         return cell
     }
     
@@ -64,8 +80,38 @@ class DisplayReflections: UIViewController, UITableViewDelegate, UITableViewData
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         
+        searchController = UISearchController(searchResultsController: resultsController)
+        tableView.tableHeaderView = searchController.searchBar
+        searchController.searchResultsUpdater = self
+        
+        resultsController.tableView.delegate = self
+        resultsController.tableView.dataSource = self
+    }
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        var dateAddedArray = [String]()
+        var count = -1
+        repeat{
+            count = count + 1
+        } while UserDefaults.standard.object(forKey: String(count) + "reflectionDateAdded") != nil
+        globalVariables.reflectionKey = count - 1
+        
+        count = 0
+        repeat{
+            dateAddedArray.append(UserDefaults.standard.string(forKey: String(count) + "reflectionDateAdded")!)
+            count = count + 1
+        } while count <= globalVariables.reflectionKey
+
+        //If this doesn't work, change "dateAddedArray" to just "array" (but not the first one)
+        filteredDateAddedArray = dateAddedArray.filter({ (array:String) -> Bool in
+            if array.contains(searchController.searchBar.text!) {
+                return true
+            } else {
+                return false
+            }
+        })
+        resultsController.tableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
