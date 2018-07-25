@@ -21,5 +21,4 @@ struct globalVariables {
     static var selectedReflectionText = ""
     static var selectedReflectionDateAdded = ""
     static var selectedReflectionQuestions = [""]
-    
 }

@@ -11,8 +11,13 @@ import UIKit
 class DisplayGoals: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    //We can't do "return globalVariables.goalKey + 1" because the variables haven't loaded
-        return 10
+        var count = -1
+        repeat{
+            count = count + 1
+        } while UserDefaults.standard.object(forKey: String(count) + "goalTitle") != nil
+        globalVariables.goalKey = count - 1
+        
+        return globalVariables.goalKey + 1
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

@@ -82,15 +82,17 @@ class DisplayReflections: UIViewController, UITableViewDelegate, UITableViewData
 
     //WE NEED TO DO THIS... GLOBAL VARIALBE?
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //We can't do "return globalVariables.reflectionKey + 1" because the variables haven't loaded
-        //    if tableView == resultsController.tableView {
-        //        return filteredDateAddedArray.count
-        //   }
+
+        var count = -1
+        repeat{
+            count = count + 1
+        } while UserDefaults.standard.object(forKey: String(count) + "reflectionText") != nil
+        globalVariables.reflectionKey = count - 1
         
         if isSearching {
             return filteredData.count
         }
-        return 10
+        return  globalVariables.reflectionKey + 1
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

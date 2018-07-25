@@ -16,15 +16,10 @@ class DisplaySpecificGoal: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-    //    descriptionLabel.text = globalVariables.selectedDescription
-     
-        
         titleLabel.text = globalVariables.selectedGoal.title
         descriptionLabel.text = globalVariables.selectedGoal.description
         dateAddedLabel.text = globalVariables.selectedGoal.dateAdded
         
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
