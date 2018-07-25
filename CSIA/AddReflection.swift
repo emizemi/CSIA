@@ -35,7 +35,7 @@ class AddReflection: UIViewController {
         
         //This date formater only gets the date, not time
         let dateformatter = DateFormatter()
-        dateformatter.dateStyle = DateFormatter.Style.short
+        dateformatter.dateStyle = DateFormatter.Style.long
         dateformatter.timeStyle = DateFormatter.Style.none
         let currentDate = dateformatter.string(from: Date())
         

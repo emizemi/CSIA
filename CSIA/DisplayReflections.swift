@@ -8,36 +8,13 @@
 
 import UIKit
 
-// PUT BACK UISearchResultsUpdating
-class DisplayReflections: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
+//ADDBACK UISearchResultsUpdating
+class DisplayReflections: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate{
     
-    @IBOutlet weak var tableView: UITableView!
-    var filteredDateAddedArray = [String]()
-
-    var searchController = UISearchController()
-    var resultsController = UITableViewController()
-    
-    //WE NEED TO DO THIS... GLOBAL VARIALBE?
-    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    //We can't do "return globalVariables.reflectionKey + 1" because the variables haven't loaded
-    //    if tableView == resultsController.tableView {
-    //        return filteredDateAddedArray.count
-     //   }
-        return 10
-    }
-    
-    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reflectionCell", for: indexPath)
-
-        if tableView == resultsController.tableView {
-            cell.textLabel?.text = filteredDateAddedArray[indexPath.row]
-        } else {
-            cell.textLabel?.text = UserDefaults.standard.string(forKey: String(indexPath.row) + "reflectionDateAdded")
-        }
-        return cell
-    }
-    
-
+    @IBOutlet weak var myTableView: UITableView!
+    @IBOutlet weak var searchBar: UISearchBar!
+    var filteredData = [String]()
+    var isSearching = false
     
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         globalVariables.selectedReflectionText = UserDefaults.standard.string(forKey: String(indexPath.row) + "reflectionText")!
@@ -72,7 +49,7 @@ class DisplayReflections: UIViewController, UITableViewDelegate, UITableViewData
                 UserDefaults.standard.set(UserDefaults.standard.object(forKey: String(currentRow + 1) + "reflectionDateAdded"), forKey: String(currentRow) + "reflectionDateAdded")
                 
                 currentRow = currentRow + 1
-            }while UserDefaults.standard.object(forKey: String(currentRow) + "reflectionText") != nil
+            } while UserDefaults.standard.object(forKey: String(currentRow) + "reflectionText") != nil
             
             tableView.reloadData()
         }
@@ -81,39 +58,11 @@ class DisplayReflections: UIViewController, UITableViewDelegate, UITableViewData
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        searchController = UISearchController(searchResultsController: resultsController)
-        tableView.tableHeaderView = searchController.searchBar
-        searchController.searchResultsUpdater = self
+        searchBar.delegate = self
+        searchBar.returnKeyType = UIReturnKeyType.done
         
-        resultsController.tableView.delegate = self
-        resultsController.tableView.dataSource = self
     }
     
-    func updateSearchResults(for searchController: UISearchController) {
-        var dateAddedArray = [String]()
-        var count = -1
-        repeat{
-            count = count + 1
-        } while UserDefaults.standard.object(forKey: String(count) + "reflectionDateAdded") != nil
-        globalVariables.reflectionKey = count - 1
-        
-        count = 0
-        repeat{
-            dateAddedArray.append(UserDefaults.standard.string(forKey: String(count) + "reflectionDateAdded")!)
-            count = count + 1
-        } while count <= globalVariables.reflectionKey
-
-        //If this doesn't work, change "dateAddedArray" to just "array" (but not the first one)
-        filteredDateAddedArray = dateAddedArray.filter({ (array:String) -> Bool in
-            if array.contains(searchController.searchBar.text!) {
-                return true
-            } else {
-                return false
-            }
-        })
-        resultsController.tableView.reloadData()
-    }
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -131,6 +80,59 @@ class DisplayReflections: UIViewController, UITableViewDelegate, UITableViewData
         print("---end---")
     }
 
+    //WE NEED TO DO THIS... GLOBAL VARIALBE?
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        //We can't do "return globalVariables.reflectionKey + 1" because the variables haven't loaded
+        //    if tableView == resultsController.tableView {
+        //        return filteredDateAddedArray.count
+        //   }
+        
+        if isSearching {
+            return filteredData.count
+        }
+        return 10
+    }
+    
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "reflectionCell", for: indexPath)
+        
+
+        
+        let text: String!
+        if isSearching {
+            text = filteredData[indexPath.row]
+        } else {
+        cell.textLabel?.text = UserDefaults.standard.string(forKey: String(indexPath.row) + "reflectionDateAdded")
+        }
+        return cell
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+                var dateAddedArray = [String]()
+                var count = -1
+                repeat{
+                    count = count + 1
+                } while UserDefaults.standard.object(forKey: String(count) + "reflectionDateAdded") != nil
+                globalVariables.reflectionKey = count - 1
+        
+                count = 0
+                repeat{
+                    dateAddedArray.append(UserDefaults.standard.string(forKey: String(count) + "reflectionDateAdded")!)
+                    count = count + 1
+                } while count <= globalVariables.reflectionKey
+        
+        if searchBar.text == nil || searchBar.text == "" {
+            isSearching = false
+            view.endEditing(true)
+            myTableView.reloadData()
+        }else{
+            isSearching = true
+            filteredData = dateAddedArray.filter({$0 == searchBar.text})
+            
+            myTableView.reloadData()
+        }
+    }
+    
     /*
     // MARK: - Navigation
 
