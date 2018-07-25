@@ -7,48 +7,23 @@
 //
 
 import Foundation
-//class Reflection{
-//    var text: String
-//    var date: Date
-//
-//    //This is the constructor
-//    init (text: String) {
-//        //"text" on the left is the instance variable
-//        //"text" on the right isthe parameter
-//        self.text = text
-//    }
-//
-//    func getText () -> String {
-//        return self.text
-//    }
-//
-//    init(date:Date) { // initializer 1
-//        self.date = date
-//    }
-//
-//    func getDate () -> Date {
-//        return self.date
-//    }
-//
-//}
 
 class Reflection {
     var text: String
-    var date: Date
+    var dateAdded: String
 
-    // Constructor
-    init (text: String, date: Date) {
+    init (text: String, dateAdded: String) {
         self.text = text
-        self.date = date
+        self.dateAdded = dateAdded
     }
     
     func getText () -> String {
         return self.text
     }
     
-    func getDate () -> Date {
-        return self.date
+    func getDate () -> String {
+        return self.dateAdded
     }
 }
 
-//var myReflection = Reflection(text: text.input, date = Date()
+

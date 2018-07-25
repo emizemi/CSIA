@@ -20,6 +20,9 @@
 		F5754DB121071AB700F0883F /* DisplaySpecificGoal.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5754DB021071AB700F0883F /* DisplaySpecificGoal.swift */; };
 		F5754DB321072D2E00F0883F /* Reflection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5754DB221072D2E00F0883F /* Reflection.swift */; };
 		F5C9FB8B2106CBBB000C5AB0 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C9FB8A2106CBBB000C5AB0 /* Test.swift */; };
+		F5D06937210873F0007DA764 /* AddReflection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D06936210873F0007DA764 /* AddReflection.swift */; };
+		F5D06939210879B2007DA764 /* GuidedReflection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D06938210879B2007DA764 /* GuidedReflection.swift */; };
+		F5D0693B21088425007DA764 /* DisplaySpecificReflection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D0693A21088425007DA764 /* DisplaySpecificReflection.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +41,9 @@
 		F5754DB021071AB700F0883F /* DisplaySpecificGoal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplaySpecificGoal.swift; sourceTree = "<group>"; };
 		F5754DB221072D2E00F0883F /* Reflection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reflection.swift; sourceTree = "<group>"; };
 		F5C9FB8A2106CBBB000C5AB0 /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
+		F5D06936210873F0007DA764 /* AddReflection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReflection.swift; sourceTree = "<group>"; };
+		F5D06938210879B2007DA764 /* GuidedReflection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuidedReflection.swift; sourceTree = "<group>"; };
+		F5D0693A21088425007DA764 /* DisplaySpecificReflection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplaySpecificReflection.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,7 +84,10 @@
 				F570D6702105E6380069FF1F /* Graph.swift */,
 				F570D67821061CC30069FF1F /* AddGoal.swift */,
 				F5754DB221072D2E00F0883F /* Reflection.swift */,
+				F5D06938210879B2007DA764 /* GuidedReflection.swift */,
 				F570D66C2105DD970069FF1F /* DisplayReflections.swift */,
+				F5D0693A21088425007DA764 /* DisplaySpecificReflection.swift */,
+				F5D06936210873F0007DA764 /* AddReflection.swift */,
 				F570D65C2105CAEA0069FF1F /* Main.storyboard */,
 				F5C9FB8A2106CBBB000C5AB0 /* Test.swift */,
 				F570D65F2105CAEA0069FF1F /* Assets.xcassets */,
@@ -162,12 +171,15 @@
 			files = (
 				F570D6712105E6380069FF1F /* Graph.swift in Sources */,
 				F5754DB121071AB700F0883F /* DisplaySpecificGoal.swift in Sources */,
+				F5D06939210879B2007DA764 /* GuidedReflection.swift in Sources */,
 				F570D66B2105D3E60069FF1F /* DisplayGoals.swift in Sources */,
+				F5D06937210873F0007DA764 /* AddReflection.swift in Sources */,
 				F5C9FB8B2106CBBB000C5AB0 /* Test.swift in Sources */,
 				F570D67B21062DF00069FF1F /* GlobalVariables.swift in Sources */,
 				F570D6592105CAEA0069FF1F /* AppDelegate.swift in Sources */,
 				F570D67521061C180069FF1F /* Goal.swift in Sources */,
 				F570D66D2105DD970069FF1F /* DisplayReflections.swift in Sources */,
+				F5D0693B21088425007DA764 /* DisplaySpecificReflection.swift in Sources */,
 				F5754DB321072D2E00F0883F /* Reflection.swift in Sources */,
 				F570D67921061CC30069FF1F /* AddGoal.swift in Sources */,
 			);

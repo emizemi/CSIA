@@ -11,14 +11,13 @@ class Goal {
     
     var title: String
     var description: String
-    var date: Date
+    var dateAdded: String
     var checkin: [Int] = []
     
-    //Constructor
-    init(title:String, description:String, date:Date, checkin:[Int]) {
+    init(title:String, description:String, dateAdded:String, checkin:[Int]) {
         self.title = title
         self.description = description
-        self.date = date
+        self.dateAdded = dateAdded
         self.checkin = checkin
     }
     
@@ -30,8 +29,8 @@ class Goal {
         return self.description
     }
     
-    func getText () -> Date {
-        return self.date
+    func getText () -> String {
+        return self.dateAdded
     }
     
     //Still not exactly sure if this returns an array

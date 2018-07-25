@@ -1,30 +1,28 @@
 //
-//  DisplaySpecificGoal.swift
+//  DisplaySpecificReflection.swift
 //  CSIA
 //
-//  Created by Emilio Encarnacion on 24/7/18.
+//  Created by Emilio Encarnacion on 25/7/18.
 //  Copyright © 2018 Emilio Encarnacion. All rights reserved.
 //
 
 import UIKit
 
-class DisplaySpecificGoal: UIViewController {
+class DisplaySpecificReflection: UIViewController {
 
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var dateAddedLabel: UILabel!
+    @IBOutlet weak var textLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-    //    descriptionLabel.text = globalVariables.selectedDescription
-     
-        
-        titleLabel.text = globalVariables.selectedGoal.title
-        descriptionLabel.text = globalVariables.selectedGoal.description
-        dateAddedLabel.text = globalVariables.selectedGoal.dateAdded
-        
         // Do any additional setup after loading the view.
+        
+        //IF STATEMENT
+        dateAddedLabel.text = globalVariables.selectedReflection.dateAdded
+        textLabel.text = globalVariables.selectedReflection.text
+
+
     }
 
     override func didReceiveMemoryWarning() {

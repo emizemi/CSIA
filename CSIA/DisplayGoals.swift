@@ -11,39 +11,37 @@ import UIKit
 class DisplayGoals: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    //We can't do "return globalVariables.goalKey + 1" because the variables haven't loaded
         return 10
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        
-        if UserDefaults.standard.object(forKey: String(indexPath.row) + "goal") != nil {
-        let currentGoal = UserDefaults.standard.object(forKey: String(indexPath.row) + "goal") as! Goal
-        cell.textLabel?.text = currentGoal.title
-        }
-        
+        cell.textLabel?.text = UserDefaults.standard.string(forKey: String(indexPath.row) + "goalTitle")
         return cell
     }
     
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-     //   globalVariables.selectedTitle = UserDefaults.standard.string(forKey: String(indexPath.row) + "title")!
-      //  globalVariables.selectedDescription = UserDefaults.standard.string(forKey: String(indexPath.row) + "description")!
+        globalVariables.selectedGoalTitle = UserDefaults.standard.string(forKey: String(indexPath.row) + "goalTitle")!
+        globalVariables.selectedGoalDescription = UserDefaults.standard.string(forKey: String(indexPath.row) + "goalDescription")!
+        globalVariables.selectedGoalDateAdded = UserDefaults.standard.string(forKey: String(indexPath.row) + "goalDateAdded")!
+
         
-        globalVariables.selectedGoal = UserDefaults.standard.object(forKey: String(indexPath.row) + "goal") as! Goal
-        performSegue(withIdentifier: "segue", sender: self)
+        globalVariables.selectedGoal =  Goal(title: globalVariables.selectedGoalTitle, description: globalVariables.selectedGoalDescription, dateAdded: globalVariables.selectedGoalDateAdded, checkin: [])
+        performSegue(withIdentifier: "goalSegue", sender: self)
     }
     
 
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == UITableViewCellEditingStyle.delete {
-        //    print("This is where the deleting-a-goal logic will be")
             
-       //     UserDefaults.standard.removeObject(forKey: String(indexPath.row) + "title")
-       //     UserDefaults.standard.removeObject(forKey: String(indexPath.row) + "description")
-            
-            UserDefaults.standard.removeObject(forKey: String(indexPath.row) + "goal")
+            UserDefaults.standard.removeObject(forKey: String(indexPath.row) + "goalTitle")
+            UserDefaults.standard.removeObject(forKey: String(indexPath.row) + "goalDescription")
+            UserDefaults.standard.removeObject(forKey: String(indexPath.row) + "goalDateAdded")
 
+            if globalVariables.goalKey != -1 {
             globalVariables.goalKey = globalVariables.goalKey - 1
+            }
             
             print("---Start---")
             print("This is the globlVariables.goalKey")
@@ -52,12 +50,14 @@ class DisplayGoals: UIViewController, UITableViewDelegate, UITableViewDataSource
             
             var currentRow = indexPath.row
             repeat{
-       //         UserDefaults.standard.set(UserDefaults.standard.object(forKey: String(currentRow + 1) + "title"), forKey: String(currentRow) + "title")
-        //        UserDefaults.standard.set(UserDefaults.standard.object(forKey: String(currentRow + 1) + "description"), forKey: String(currentRow) + "description")
+                UserDefaults.standard.set(UserDefaults.standard.object(forKey: String(currentRow + 1) + "goalTitle"), forKey: String(currentRow) + "goalTitle")
+                UserDefaults.standard.set(UserDefaults.standard.object(forKey: String(currentRow + 1) + "goalDescription"), forKey: String(currentRow) + "goalDescription")
+                UserDefaults.standard.set(UserDefaults.standard.object(forKey: String(currentRow + 1) + "goalDateAdded"), forKey: String(currentRow) + "goalDateAdded")
+
                 
-                UserDefaults.standard.set(UserDefaults.standard.object(forKey: String(currentRow + 1) + "goal"), forKey: String(currentRow) + "goal")
+               // UserDefaults.standard.set(UserDefaults.standard.object(forKey: String(currentRow + 1) + "goal"), forKey: String(currentRow) + "goal")
                 currentRow = currentRow + 1
-            }while UserDefaults.standard.object(forKey: String(currentRow) + "title") != nil
+            }while UserDefaults.standard.object(forKey: String(currentRow) + "goalTitle") != nil
             
             tableView.reloadData()
         }
@@ -65,8 +65,8 @@ class DisplayGoals: UIViewController, UITableViewDelegate, UITableViewDataSource
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -78,9 +78,9 @@ class DisplayGoals: UIViewController, UITableViewDelegate, UITableViewDataSource
     //ViewDidAppear makes sure that the view has appeared
     override func viewDidAppear(_ animated: Bool) {
             var count = -1
-              repeat{
+            repeat{
                 count = count + 1
-            } while UserDefaults.standard.object(forKey: String(count) + "goal") != nil
+            } while UserDefaults.standard.object(forKey: String(count) + "goalTitle") != nil
             globalVariables.goalKey = count - 1
         print("---Start---")
         print("This is the globlVariables.goalKey")

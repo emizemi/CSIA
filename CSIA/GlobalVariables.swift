@@ -10,9 +10,16 @@ import Foundation
 
 struct globalVariables {
     static var goalKey = -1
-    static var selectedGoal = Goal(title: "", description: "", date: Date(), checkin: [])
+    static var selectedGoal = Goal(title: "", description: "", dateAdded: "", checkin: [])
+    static var selectedGoalTitle = ""
+    static var selectedGoalDescription = ""
+    static var selectedGoalDateAdded = ""
     
-    //finna delete
- //   static var selectedTitle = ""
-   // static var selectedDescription = ""
+    static var reflectionKey = -1
+    static var selectedReflection = Reflection(text: "", dateAdded: "")
+    static var selectedGuidedReflection = GuidedReflection(text: "", dateAdded: "", questions: [])
+    static var selectedReflectionText = ""
+    static var selectedReflectionDateAdded = ""
+    static var selectedReflectionQuestions = [""]
+    
 }
