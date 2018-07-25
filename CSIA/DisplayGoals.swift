@@ -20,6 +20,12 @@ class DisplayGoals: UIViewController, UITableViewDelegate, UITableViewDataSource
         return cell
     }
     
+    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        globalVariables.selectedTitle = UserDefaults.standard.string(forKey: String(indexPath.row) + "title")!
+        globalVariables.selectedDescription = UserDefaults.standard.string(forKey: String(indexPath.row) + "description")!
+        performSegue(withIdentifier: "segue", sender: self)
+    }
+    
 
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == UITableViewCellEditingStyle.delete {
@@ -27,11 +33,11 @@ class DisplayGoals: UIViewController, UITableViewDelegate, UITableViewDataSource
             
             UserDefaults.standard.removeObject(forKey: String(indexPath.row) + "title")
             UserDefaults.standard.removeObject(forKey: String(indexPath.row) + "description")
-            globalVariables.KeyNumber = globalVariables.KeyNumber - 1
+            globalVariables.keyNumber = globalVariables.keyNumber - 1
             
             print("---Start---")
             print("This is the globlVariables.keyNumber")
-            print(globalVariables.KeyNumber)
+            print(globalVariables.keyNumber)
             print("---end---")
             
             var currentRow = indexPath.row
@@ -64,10 +70,10 @@ class DisplayGoals: UIViewController, UITableViewDelegate, UITableViewDataSource
               repeat{
                 count = count + 1
             } while UserDefaults.standard.object(forKey: String(count) + "title") != nil
-            globalVariables.KeyNumber = count - 1
+            globalVariables.keyNumber = count - 1
         print("---Start---")
         print("This is the globlVariables.keyNumber")
-        print(globalVariables.KeyNumber)
+        print(globalVariables.keyNumber)
         print("---end---")
     }
     

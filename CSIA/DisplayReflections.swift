@@ -8,10 +8,16 @@
 
 import UIKit
 
-class DisplayReflections: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class DisplayReflections: UIViewController, UITableViewDelegate, UITableViewDataSource{
 
+    
+    //This will be an array of Reflection objects?
+
+    
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 10
+        
+
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -20,9 +26,23 @@ class DisplayReflections: UIViewController, UITableViewDelegate, UITableViewData
         return cell
     }
     
+
+    
+    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        var reflectionOne = Reflection(text: "So over the past few weeeks...", date: Date())
+        
+        print("Start print")
+        print(reflectionOne.text)
+        print(reflectionOne.date)
+        print("Finished print")
+
+        
         // Do any additional setup after loading the view.
     }
 

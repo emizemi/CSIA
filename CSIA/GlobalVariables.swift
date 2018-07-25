@@ -9,6 +9,7 @@
 import Foundation
 
 struct globalVariables {
-    static var KeyNumber = -1
-    
+    static var keyNumber = -1
+    static var selectedTitle = ""
+    static var selectedDescription = ""
 }

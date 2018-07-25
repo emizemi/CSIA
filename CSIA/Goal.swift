@@ -13,10 +13,30 @@ class Goal {
     var description: String
     var date: Date
     var checkin: [Int] = []
-    init(title:String, description:String, date:Date, checkin:[Int]) { // initializer 1
-        self.title = "LMAO"
-        self.description = "lel"
-        self.date = Date()
+    
+    //Constructor
+    init(title:String, description:String, date:Date, checkin:[Int]) {
+        self.title = title
+        self.description = description
+        self.date = date
+        self.checkin = checkin
+    }
+    
+    func getTitle () -> String {
+        return self.title
+    }
+    
+    func getDescription () -> String {
+        return self.description
+    }
+    
+    func getText () -> Date {
+        return self.date
+    }
+    
+    //Still not exactly sure if this returns an array
+    func getText () -> [Int] {
+        return self.checkin
     }
     
 }
