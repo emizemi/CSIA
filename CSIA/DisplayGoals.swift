@@ -16,13 +16,20 @@ class DisplayGoals: UIViewController, UITableViewDelegate, UITableViewDataSource
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = UserDefaults.standard.string(forKey: String(indexPath.row) + "title")
+        
+        if UserDefaults.standard.object(forKey: String(indexPath.row) + "goal") != nil {
+        let currentGoal = UserDefaults.standard.object(forKey: String(indexPath.row) + "goal") as! Goal
+        cell.textLabel?.text = currentGoal.title
+        }
+        
         return cell
     }
     
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        globalVariables.selectedTitle = UserDefaults.standard.string(forKey: String(indexPath.row) + "title")!
-        globalVariables.selectedDescription = UserDefaults.standard.string(forKey: String(indexPath.row) + "description")!
+     //   globalVariables.selectedTitle = UserDefaults.standard.string(forKey: String(indexPath.row) + "title")!
+      //  globalVariables.selectedDescription = UserDefaults.standard.string(forKey: String(indexPath.row) + "description")!
+        
+        globalVariables.selectedGoal = UserDefaults.standard.object(forKey: String(indexPath.row) + "goal") as! Goal
         performSegue(withIdentifier: "segue", sender: self)
     }
     
@@ -31,20 +38,24 @@ class DisplayGoals: UIViewController, UITableViewDelegate, UITableViewDataSource
         if editingStyle == UITableViewCellEditingStyle.delete {
         //    print("This is where the deleting-a-goal logic will be")
             
-            UserDefaults.standard.removeObject(forKey: String(indexPath.row) + "title")
-            UserDefaults.standard.removeObject(forKey: String(indexPath.row) + "description")
-            globalVariables.keyNumber = globalVariables.keyNumber - 1
+       //     UserDefaults.standard.removeObject(forKey: String(indexPath.row) + "title")
+       //     UserDefaults.standard.removeObject(forKey: String(indexPath.row) + "description")
+            
+            UserDefaults.standard.removeObject(forKey: String(indexPath.row) + "goal")
+
+            globalVariables.goalKey = globalVariables.goalKey - 1
             
             print("---Start---")
-            print("This is the globlVariables.keyNumber")
-            print(globalVariables.keyNumber)
+            print("This is the globlVariables.goalKey")
+            print(globalVariables.goalKey)
             print("---end---")
             
             var currentRow = indexPath.row
-            
             repeat{
-                UserDefaults.standard.set(UserDefaults.standard.object(forKey: String(currentRow + 1) + "title"), forKey: String(currentRow) + "title")
-                UserDefaults.standard.set(UserDefaults.standard.object(forKey: String(currentRow + 1) + "description"), forKey: String(currentRow) + "description")
+       //         UserDefaults.standard.set(UserDefaults.standard.object(forKey: String(currentRow + 1) + "title"), forKey: String(currentRow) + "title")
+        //        UserDefaults.standard.set(UserDefaults.standard.object(forKey: String(currentRow + 1) + "description"), forKey: String(currentRow) + "description")
+                
+                UserDefaults.standard.set(UserDefaults.standard.object(forKey: String(currentRow + 1) + "goal"), forKey: String(currentRow) + "goal")
                 currentRow = currentRow + 1
             }while UserDefaults.standard.object(forKey: String(currentRow) + "title") != nil
             
@@ -69,11 +80,11 @@ class DisplayGoals: UIViewController, UITableViewDelegate, UITableViewDataSource
             var count = -1
               repeat{
                 count = count + 1
-            } while UserDefaults.standard.object(forKey: String(count) + "title") != nil
-            globalVariables.keyNumber = count - 1
+            } while UserDefaults.standard.object(forKey: String(count) + "goal") != nil
+            globalVariables.goalKey = count - 1
         print("---Start---")
-        print("This is the globlVariables.keyNumber")
-        print(globalVariables.keyNumber)
+        print("This is the globlVariables.goalKey")
+        print(globalVariables.goalKey)
         print("---end---")
     }
     

@@ -20,12 +20,14 @@ class Test: UIViewController {
 
             UserDefaults.standard.removeObject(forKey: String(count) + "title")
             UserDefaults.standard.removeObject(forKey: String(count) + "description")
+            UserDefaults.standard.removeObject(forKey: String(count) + "goal")
+
             count = count + 1
         } while UserDefaults.standard.object(forKey: String(count) + "title") != nil
         
-        //Instant delete something
-        UserDefaults.standard.removeObject(forKey: String(2) + "title")
-        UserDefaults.standard.removeObject(forKey: String(2) + "description")
+        //Instanty delete something
+//        UserDefaults.standard.removeObject(forKey: String(2) + "title")
+//        UserDefaults.standard.removeObject(forKey: String(2) + "description")
         
         print("all values")
         print(UserDefaults.standard.dictionaryRepresentation())

@@ -38,6 +38,6 @@ class Goal {
     func getText () -> [Int] {
         return self.checkin
     }
-    
+
 }
 

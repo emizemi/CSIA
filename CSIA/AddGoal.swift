@@ -28,15 +28,15 @@ class AddGoal: UIViewController {
     @IBAction func addGoal(_ sender: UIButton) {
         //print("This is where the adding a goal logic will be")
         //The key will be a number, so whenever titleInput is added, it incremenets by 1\
-        globalVariables.keyNumber = globalVariables.keyNumber + 1
-    //    var newGoal = Goal(title: titleInput.text, description: descriptionInput.text, date: Date(), checkin: [])
-    //    UserDefaults.standard.set(newGoal, forKey: String(globalVariables.keyNumber))
+        globalVariables.goalKey = globalVariables.goalKey + 1
+        let newGoal = Goal(title: titleInput.text, description: descriptionInput.text, date: Date(), checkin: [])
+       UserDefaults.standard.set(newGoal, forKey: String(globalVariables.goalKey) + "goal")
 
         
-        let currentTitleKey = String(globalVariables.keyNumber) + "title"
-        let currentDescriptionKey = String(globalVariables.keyNumber) + "description"
-        UserDefaults.standard.set(titleInput.text, forKey: currentTitleKey)
-        UserDefaults.standard.set(descriptionInput.text, forKey: currentDescriptionKey)
+  //      let currentTitleKey = String(globalVariables.keyNumber) + "title"
+   //     let currentDescriptionKey = String(globalVariables.keyNumber) + "description"
+   //     UserDefaults.standard.set(titleInput.text, forKey: currentTitleKey)
+   //     UserDefaults.standard.set(descriptionInput.text, forKey: currentDescriptionKey)
         
         //Do I need the following two lines???
         titleInput.text = ""
