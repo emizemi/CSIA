@@ -33,7 +33,7 @@ class AddGoal: UIViewController {
         dateformatter.timeStyle = DateFormatter.Style.none
         let currentDate = dateformatter.string(from: Date())
         
-        let newGoal = Goal(title: titleInput.text, description: descriptionInput.text, dateAdded: currentDate, checkin: [])
+        let newGoal = Goal(title: titleInput.text, description: descriptionInput.text, dateAdded: currentDate, index: globalVariables.goalKey )
         
        UserDefaults.standard.set(newGoal.title, forKey: String(globalVariables.goalKey) + "goalTitle")
         UserDefaults.standard.set(newGoal.description, forKey: String(globalVariables.goalKey) + "goalDescription")

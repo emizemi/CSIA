@@ -13,39 +13,77 @@ class Test: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        var goalCount = 0
-        repeat{
-            UserDefaults.standard.removeObject(forKey: String(goalCount) + "goalTitle")
-            UserDefaults.standard.removeObject(forKey: String(goalCount) + "goalDescription")
-            UserDefaults.standard.removeObject(forKey: String(goalCount) + "goalDateAdded")
-            goalCount = goalCount + 1
-        } while UserDefaults.standard.object(forKey: String(goalCount) + "goalTitle") != nil
+//        var goalCount = 0
+//        repeat{
+//            UserDefaults.standard.removeObject(forKey: String(goalCount) + "goalTitle")
+//            UserDefaults.standard.removeObject(forKey: String(goalCount) + "goalDescription")
+//            UserDefaults.standard.removeObject(forKey: String(goalCount) + "goalDateAdded")
+//            goalCount = goalCount + 1
+//        } while UserDefaults.standard.object(forKey: String(goalCount) + "goalTitle") != nil
+//
+//        var reflectionCount = 0
+//        repeat{
+//            UserDefaults.standard.removeObject(forKey: String(reflectionCount) + "reflectionDateAdded")
+//            UserDefaults.standard.removeObject(forKey: String(reflectionCount) + "reflectionText")
+//            reflectionCount = reflectionCount + 1
+//        } while UserDefaults.standard.object(forKey: String(reflectionCount) + "reflectionText") != nil
+//
+//        var checkInCount = 0
+//        repeat{
+//            UserDefaults.standard.removeObject(forKey: String(checkInCount) + "checkInTitle" + String(0))
+//            UserDefaults.standard.removeObject(forKey: String(checkInCount) + "checkInValue" + String(0))
+//            UserDefaults.standard.removeObject(forKey: String(checkInCount) + "checkInDateAdded" + String(0))
+//            checkInCount = checkInCount + 1
+//        } while UserDefaults.standard.object(forKey: String(checkInCount) + "checkInDateAdded" + String(0)) != nil
+//
+//        checkInCount = 7
+//        repeat{
+//            UserDefaults.standard.removeObject(forKey: String(checkInCount) + "checkInTitle" + String(1))
+//            UserDefaults.standard.removeObject(forKey: String(checkInCount) + "checkInValue" + String(1))
+//            UserDefaults.standard.removeObject(forKey: String(checkInCount) + "checkInDateAdded" + String(1))
+//            
+//            //REMOVE SOON
+//            UserDefaults.standard.removeObject(forKey: String(checkInCount) + "checkInDescription" + String(1))
+//
+//            checkInCount = checkInCount + 1
+//        } while UserDefaults.standard.object(forKey: String(checkInCount) + "checkInDateAdded" + String(1)) != nil
+//
+//         checkInCount = 0
+//        repeat{
+//            UserDefaults.standard.removeObject(forKey: String(checkInCount) + "checkInTitle" + String(2))
+//            UserDefaults.standard.removeObject(forKey: String(checkInCount) + "checkInValue" + String(2))
+//            UserDefaults.standard.removeObject(forKey: String(checkInCount) + "checkInDateAdded" + String(2))
+//            checkInCount = checkInCount + 1
+//        } while UserDefaults.standard.object(forKey: String(checkInCount) + "checkInDateAdded" + String(2)) != nil
+//
+//         checkInCount = 0
+//        repeat{
+//            UserDefaults.standard.removeObject(forKey: String(checkInCount) + "checkInTitle" + String(3))
+//            UserDefaults.standard.removeObject(forKey: String(checkInCount) + "checkInValue" + String(3))
+//            UserDefaults.standard.removeObject(forKey: String(checkInCount) + "checkInDateAdded" + String(3))
+//            checkInCount = checkInCount + 1
+//        } while UserDefaults.standard.object(forKey: String(checkInCount) + "checkInDateAdded" + String(3)) != nil
+//
+//         checkInCount = 0
+//        repeat{
+//            UserDefaults.standard.removeObject(forKey: String(checkInCount) + "checkInTitle" + String(4))
+//            UserDefaults.standard.removeObject(forKey: String(checkInCount) + "checkInValue" + String(4))
+//            UserDefaults.standard.removeObject(forKey: String(checkInCount) + "checkInDateAdded" + String(4))
+//            checkInCount = checkInCount + 1
+//        } while UserDefaults.standard.object(forKey: String(checkInCount) + "checkInDateAdded" + String(4)) != nil
+//
+////        Instanty delete something
+////        UserDefaults.standard.removeObject(forKey: String(2) + "title")
+////        UserDefaults.standard.removeObject(forKey: String(2) + "description")
+
+        let domain = Bundle.main.bundleIdentifier!
+        UserDefaults.standard.removePersistentDomain(forName: domain)
+        UserDefaults.standard.synchronize()
         
-        var reflectionCount = 0
-        repeat{
-            UserDefaults.standard.removeObject(forKey: String(reflectionCount) + "reflectionDateAdded")
-            UserDefaults.standard.removeObject(forKey: String(reflectionCount) + "reflectionText")
-            reflectionCount = reflectionCount + 1
-        } while UserDefaults.standard.object(forKey: String(reflectionCount) + "reflectionText") != nil
-
-        //Instanty delete something
-//        UserDefaults.standard.removeObject(forKey: String(2) + "title")
-//        UserDefaults.standard.removeObject(forKey: String(2) + "description")
-
         print("all values")
         print(UserDefaults.standard.dictionaryRepresentation())
         print("good to go")
-//        // Do any additional setup after loading the view.
-//        let temp = Date()
-//        let dateformatter = DateFormatter()
-//
-//        dateformatter.dateStyle = DateFormatter.Style.short
-//
-//        dateformatter.timeStyle = DateFormatter.Style.short
-//        print("This is the date...")
-//        let now = dateformatter.string(from: temp)
-//        print(now)
-//        print("---END---")
+
     }
 
     override func didReceiveMemoryWarning() {

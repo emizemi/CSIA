@@ -46,13 +46,6 @@ class AddReflection: UIViewController {
         UserDefaults.standard.set(newReflection.dateAdded, forKey: String(globalVariables.reflectionKey) + "reflectionDateAdded")
         
         
-        
-        //      let currentTitleKey = String(globalVariables.keyNumber) + "title"
-        //     let currentDescriptionKey = String(globalVariables.keyNumber) + "description"
-        //     UserDefaults.standard.set(titleInput.text, forKey: currentTitleKey)
-        //     UserDefaults.standard.set(descriptionInput.text, forKey: currentDescriptionKey)
-        
-        //Do I need the following two lines???
         textInput.text = ""
     }
     

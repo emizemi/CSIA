@@ -31,8 +31,10 @@ class DisplayGoals: UIViewController, UITableViewDelegate, UITableViewDataSource
         globalVariables.selectedGoalDescription = UserDefaults.standard.string(forKey: String(indexPath.row) + "goalDescription")!
         globalVariables.selectedGoalDateAdded = UserDefaults.standard.string(forKey: String(indexPath.row) + "goalDateAdded")!
 
+        globalVariables.selectedGoalIndex = indexPath.row
         
-        globalVariables.selectedGoal =  Goal(title: globalVariables.selectedGoalTitle, description: globalVariables.selectedGoalDescription, dateAdded: globalVariables.selectedGoalDateAdded, checkin: [])
+        
+        globalVariables.selectedGoal =  Goal(title: globalVariables.selectedGoalTitle, description: globalVariables.selectedGoalDescription, dateAdded: globalVariables.selectedGoalDateAdded, index: globalVariables.selectedGoalIndex)
         performSegue(withIdentifier: "goalSegue", sender: self)
     }
     

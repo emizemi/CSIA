@@ -10,10 +10,11 @@ import Foundation
 
 struct globalVariables {
     static var goalKey = -1
-    static var selectedGoal = Goal(title: "", description: "", dateAdded: "", checkin: [])
+    static var selectedGoal = Goal(title: "", description: "", dateAdded: "", index: 0)
     static var selectedGoalTitle = ""
     static var selectedGoalDescription = ""
     static var selectedGoalDateAdded = ""
+    static var selectedGoalIndex = 0
     
     static var reflectionKey = -1
     static var selectedReflection = Reflection(text: "", dateAdded: "")
@@ -21,4 +22,7 @@ struct globalVariables {
     static var selectedReflectionText = ""
     static var selectedReflectionDateAdded = ""
     static var selectedReflectionQuestions = [""]
+    
+    static var checkInKey = -1
+    static var selectedCheckInValue = 0
 }

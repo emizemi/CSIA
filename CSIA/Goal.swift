@@ -12,13 +12,13 @@ class Goal {
     var title: String
     var description: String
     var dateAdded: String
-    var checkin: [Int] = []
+    var index: Int
     
-    init(title:String, description:String, dateAdded:String, checkin:[Int]) {
+    init(title:String, description:String, dateAdded:String, index:Int) {
         self.title = title
         self.description = description
         self.dateAdded = dateAdded
-        self.checkin = checkin
+        self.index = index
     }
     
     func getTitle () -> String {
@@ -29,13 +29,13 @@ class Goal {
         return self.description
     }
     
-    func getText () -> String {
+    func getDateAdded () -> String {
         return self.dateAdded
     }
     
     //Still not exactly sure if this returns an array
-    func getText () -> [Int] {
-        return self.checkin
+    func getIndex () -> Int {
+        return self.index
     }
 
 }
