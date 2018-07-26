@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F512B7BF2109CE28006D26F6 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F512B7BE2109CE28006D26F6 /* CollectionViewCell.swift */; };
+		F512B7C12109E04C006D26F6 /* ViewCheckInPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F512B7C02109E04C006D26F6 /* ViewCheckInPopUp.swift */; };
 		F570D6592105CAEA0069FF1F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F570D6582105CAEA0069FF1F /* AppDelegate.swift */; };
 		F570D65E2105CAEA0069FF1F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F570D65C2105CAEA0069FF1F /* Main.storyboard */; };
 		F570D6602105CAEA0069FF1F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F570D65F2105CAEA0069FF1F /* Assets.xcassets */; };
@@ -24,10 +26,12 @@
 		F5D06937210873F0007DA764 /* AddReflection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D06936210873F0007DA764 /* AddReflection.swift */; };
 		F5D06939210879B2007DA764 /* GuidedReflection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D06938210879B2007DA764 /* GuidedReflection.swift */; };
 		F5D0693B21088425007DA764 /* DisplaySpecificReflection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D0693A21088425007DA764 /* DisplaySpecificReflection.swift */; };
-		F5D6322E2108E63000057481 /* CheckInPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D6322D2108E63000057481 /* CheckInPopUp.swift */; };
+		F5D6322E2108E63000057481 /* AddCheckInPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D6322D2108E63000057481 /* AddCheckInPopUp.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F512B7BE2109CE28006D26F6 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		F512B7C02109E04C006D26F6 /* ViewCheckInPopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCheckInPopUp.swift; sourceTree = "<group>"; };
 		F570D6552105CAEA0069FF1F /* CSIA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CSIA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F570D6582105CAEA0069FF1F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F570D65D2105CAEA0069FF1F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -47,7 +51,7 @@
 		F5D06936210873F0007DA764 /* AddReflection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReflection.swift; sourceTree = "<group>"; };
 		F5D06938210879B2007DA764 /* GuidedReflection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuidedReflection.swift; sourceTree = "<group>"; };
 		F5D0693A21088425007DA764 /* DisplaySpecificReflection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplaySpecificReflection.swift; sourceTree = "<group>"; };
-		F5D6322D2108E63000057481 /* CheckInPopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInPopUp.swift; sourceTree = "<group>"; };
+		F5D6322D2108E63000057481 /* AddCheckInPopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCheckInPopUp.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,7 +90,9 @@
 				F57272CA2109B040007FEFA8 /* CheckIn.swift */,
 				F570D66A2105D3E60069FF1F /* DisplayGoals.swift */,
 				F5754DB021071AB700F0883F /* DisplaySpecificGoal.swift */,
-				F5D6322D2108E63000057481 /* CheckInPopUp.swift */,
+				F512B7BE2109CE28006D26F6 /* CollectionViewCell.swift */,
+				F512B7C02109E04C006D26F6 /* ViewCheckInPopUp.swift */,
+				F5D6322D2108E63000057481 /* AddCheckInPopUp.swift */,
 				F570D6702105E6380069FF1F /* Graph.swift */,
 				F570D67821061CC30069FF1F /* AddGoal.swift */,
 				F5754DB221072D2E00F0883F /* Reflection.swift */,
@@ -178,13 +184,15 @@
 				F570D6712105E6380069FF1F /* Graph.swift in Sources */,
 				F57272CB2109B040007FEFA8 /* CheckIn.swift in Sources */,
 				F5754DB121071AB700F0883F /* DisplaySpecificGoal.swift in Sources */,
-				F5D6322E2108E63000057481 /* CheckInPopUp.swift in Sources */,
+				F5D6322E2108E63000057481 /* AddCheckInPopUp.swift in Sources */,
+				F512B7C12109E04C006D26F6 /* ViewCheckInPopUp.swift in Sources */,
 				F5D06939210879B2007DA764 /* GuidedReflection.swift in Sources */,
 				F570D66B2105D3E60069FF1F /* DisplayGoals.swift in Sources */,
 				F5D06937210873F0007DA764 /* AddReflection.swift in Sources */,
 				F5C9FB8B2106CBBB000C5AB0 /* Test.swift in Sources */,
 				F570D67B21062DF00069FF1F /* GlobalVariables.swift in Sources */,
 				F570D6592105CAEA0069FF1F /* AppDelegate.swift in Sources */,
+				F512B7BF2109CE28006D26F6 /* CollectionViewCell.swift in Sources */,
 				F570D67521061C180069FF1F /* Goal.swift in Sources */,
 				F570D66D2105DD970069FF1F /* DisplayReflections.swift in Sources */,
 				F5D0693B21088425007DA764 /* DisplaySpecificReflection.swift in Sources */,

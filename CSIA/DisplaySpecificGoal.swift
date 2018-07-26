@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DisplaySpecificGoal: UIViewController {
+class DisplaySpecificGoal: UIViewController,UICollectionViewDataSource,UICollectionViewDelegate {
     
     
     
@@ -35,7 +35,7 @@ class DisplaySpecificGoal: UIViewController {
             }
         }while keepSearching == true
         
-        
+        print("Back to the Specific Goal View")
         
     }
 
@@ -45,13 +45,115 @@ class DisplaySpecificGoal: UIViewController {
     }
     
     @IBAction func showPopUp(_ sender: Any) {
-        let popOverVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "sbPopUpID") as! CheckInPopUp
+        let popOverVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "sbPopUpID") as! AddCheckInPopUp
         self.addChildViewController(popOverVC)
         popOverVC.view.frame = self.view.frame
         self.view.addSubview(popOverVC.view)
         popOverVC.didMove(toParentViewController: self)
     }
     
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+       // let items = ["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20"]
+        
+        var checkInTitleArray = [String]()
+        var count = -1
+        repeat{
+            count = count + 1
+        } while UserDefaults.standard.object(forKey: String(count) + "checkInTitle" + String(globalVariables.selectedGoal.index)) != nil
+        globalVariables.checkInKey = count - 1
+        
+        count = 0
+        repeat{
+            checkInTitleArray.append(UserDefaults.standard.string(forKey: String(count) + "checkInTitle" + String(globalVariables.selectedGoal.index))!)
+            count = count + 1
+        } while count <= globalVariables.checkInKey
+        
+        
+        return checkInTitleArray.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        var checkInTitleArray = [String]()
+        var count = -1
+        repeat{
+            count = count + 1
+        } while UserDefaults.standard.object(forKey: String(count) + "checkInTitle" + String(globalVariables.selectedGoal.index)) != nil
+        globalVariables.checkInKey = count - 1
+        count = 0
+        repeat{
+            checkInTitleArray.append(UserDefaults.standard.string(forKey: String(count) + "checkInTitle" + String(globalVariables.selectedGoal.index))!)
+            count = count + 1
+        } while count <= globalVariables.checkInKey
+        
+        
+        var checkInDateAddedArray = [String]()
+        count = -1
+        repeat{
+            count = count + 1
+        } while UserDefaults.standard.object(forKey: String(count) + "checkInDateAdded" + String(globalVariables.selectedGoal.index)) != nil
+        globalVariables.checkInKey = count - 1
+        count = 0
+        repeat{
+            checkInDateAddedArray.append(UserDefaults.standard.string(forKey: String(count) + "checkInDateAdded" + String(globalVariables.selectedGoal.index))!)
+            count = count + 1
+        } while count <= globalVariables.checkInKey
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CollectionViewCell
+        cell.checkInTitleLabel.text = checkInTitleArray[indexPath.item]
+        cell.checkInDateAddedLabel.text = checkInDateAddedArray[indexPath.item]
+        
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+
+        var checkInTitleArray = [String]()
+        var count = -1
+        repeat{
+            count = count + 1
+        } while UserDefaults.standard.object(forKey: String(count) + "checkInTitle" + String(globalVariables.selectedGoal.index)) != nil
+        globalVariables.checkInKey = count - 1
+        count = 0
+        repeat{
+            checkInTitleArray.append(UserDefaults.standard.string(forKey: String(count) + "checkInTitle" + String(globalVariables.selectedGoal.index))!)
+            count = count + 1
+        } while count <= globalVariables.checkInKey
+        
+        
+        var checkInDateAddedArray = [String]()
+        count = -1
+        repeat{
+            count = count + 1
+        } while UserDefaults.standard.object(forKey: String(count) + "checkInDateAdded" + String(globalVariables.selectedGoal.index)) != nil
+        globalVariables.checkInKey = count - 1
+        count = 0
+        repeat{
+            checkInDateAddedArray.append(UserDefaults.standard.string(forKey: String(count) + "checkInDateAdded" + String(globalVariables.selectedGoal.index))!)
+            count = count + 1
+        } while count <= globalVariables.checkInKey
+        
+        var checkInValueArray = [Int]()
+        count = -1
+        repeat{
+            count = count + 1
+        } while UserDefaults.standard.object(forKey: String(count) + "checkInValue" + String(globalVariables.selectedGoal.index)) != nil
+        globalVariables.checkInKey = count - 1
+        count = 0
+        repeat{
+            checkInValueArray.append(UserDefaults.standard.integer(forKey: String(count) + "checkInValue" + String(globalVariables.selectedGoal.index)))
+            count = count + 1
+        } while count <= globalVariables.checkInKey
+        
+        globalVariables.selectedCheckIn = CheckIn(title: checkInTitleArray[indexPath.item], value: checkInValueArray[indexPath.item], dateAdded: checkInDateAddedArray[indexPath.item])
+        
+        globalVariables.selectedCheckInIndex = indexPath.item
+        
+        let popUpVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ViewCheckInPopUpID") as! ViewCheckInPopUp
+        self.addChildViewController(popUpVC)
+        popUpVC.view.frame = self.view.frame
+        self.view.addSubview(popUpVC.view)
+        popUpVC.didMove(toParentViewController: self)
+    }
 
     /*
     // MARK: - Navigation

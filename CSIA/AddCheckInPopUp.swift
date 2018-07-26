@@ -1,5 +1,5 @@
 //
-//  CheckInPopUp.swift
+//  AddCheckInPopUp.swift
 //  CSIA
 //
 //  Created by Emilio Encarnacion on 26/7/18.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CheckInPopUp: UIViewController {
+class AddCheckInPopUp: UIViewController {
     @IBOutlet weak var progressLabel: UILabel!
     
     var progressArray = ["Terrible","Very Bad", "Bad", "All Right", "Good", "Very Good", "Excelent"]
@@ -40,7 +40,7 @@ class CheckInPopUp: UIViewController {
     
     @IBAction func closePopUp(_ sender: Any) {
         self.removeAnimate()
-        self.view.removeFromSuperview()
+        //self.view.removeFromSuperview()
     }
     
     //ANIMATIONS
@@ -54,7 +54,6 @@ class CheckInPopUp: UIViewController {
         });
     }
     
-    //Don't think this works lol
     func removeAnimate()
     {
         UIView.animate(withDuration: 0.25, animations: {
