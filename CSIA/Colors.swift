@@ -10,27 +10,27 @@ import Foundation
 
 class Colors {
     
-    var redComponent: Double
-    var greenComponent: Double
-    var blueComponent: Double
+    var redComponent: Int
+    var greenComponent: Int
+    var blueComponent: Int
     
 
     
-    init(redComponent:Double, greenComponent:Double, blueComponent:Double) {
+    init(redComponent:Int, greenComponent:Int, blueComponent:Int) {
         self.redComponent = redComponent
         self.greenComponent = greenComponent
         self.blueComponent = blueComponent
     }
     
-    func getRedComponent () -> Double {
+    func getRedComponent () -> Int {
         return self.redComponent
     }
     
-    func getGreenComponent () -> Double {
+    func getGreenComponent () -> Int {
         return self.greenComponent
     }
     
-    func getBlueComponent () -> Double {
+    func getBlueComponent () -> Int {
         return self.blueComponent
     }
     

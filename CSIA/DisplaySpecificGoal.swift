@@ -25,6 +25,10 @@ class DisplaySpecificGoal: UIViewController,UICollectionViewDataSource,UICollect
         
        
         super.viewDidLoad()
+        
+        descriptionLabel.lineBreakMode = .byCharWrapping
+        descriptionLabel.numberOfLines = 0
+        descriptionLabel.sizeToFit()
         titleLabel.text = globalVariables.selectedGoal.title
         descriptionLabel.text = globalVariables.selectedGoal.description
         dateAddedLabel.text = globalVariables.selectedGoal.dateAdded

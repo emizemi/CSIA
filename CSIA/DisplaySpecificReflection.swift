@@ -22,6 +22,11 @@ class DisplaySpecificReflection: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
+        textLabel.lineBreakMode = .byCharWrapping
+        textLabel.numberOfLines = 0
+        textLabel.sizeToFit()
+        
         // Do any additional setup after loading the view.
         
         //IF STATEMENT

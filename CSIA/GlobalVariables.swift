@@ -29,6 +29,6 @@ struct globalVariables {
     static var selectedCheckInValue = 0
     static var selectedCheckInIndex = 0
     
-    static var currentSettings = Settings(colorScheme: [], fontSize: 0, font: "")
+    static var currentSettings = Settings(colorScheme: [Colors(redComponent:135, greenComponent:189, blueComponent:216), Colors(redComponent:183, greenComponent:215, blueComponent:232), Colors(redComponent:207, greenComponent:224, blueComponent:232), Colors(redComponent:218, greenComponent:235, blueComponent:232)], font: "Helvetica")
 
 }

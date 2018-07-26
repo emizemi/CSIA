@@ -22,6 +22,9 @@ class DisplayGoals: UIViewController, UITableViewDelegate, UITableViewDataSource
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         cell.textLabel?.text = UserDefaults.standard.string(forKey: String(indexPath.row) + "goalTitle")
+        
+       cell.textLabel?.textColor = UIColor(red: CGFloat(globalVariables.currentSettings.colorScheme[1].redComponent), green:CGFloat(globalVariables.currentSettings.colorScheme[1].greenComponent), blue:CGFloat(globalVariables.currentSettings.colorScheme[1].blueComponent),alpha:1.00)
+        
         return cell
     }
     
@@ -93,6 +96,7 @@ class DisplayGoals: UIViewController, UITableViewDelegate, UITableViewDataSource
         print(globalVariables.goalKey)
         print("---end---")
     }
+    
     
 
     /*

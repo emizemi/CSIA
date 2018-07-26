@@ -12,22 +12,25 @@ class DisplaySettings: UIViewController, UIPickerViewDataSource, UIPickerViewDel
     
     @IBOutlet weak var colorSchemePickerView: UIPickerView!
     @IBOutlet weak var fontPickerView: UIPickerView!
-    @IBOutlet weak var fontSizePickerView: UIPickerView!
     
-    var brownVarietyColorScheme: [Colors] = [Colors(redComponent:185, greenComponent:147, blueComponent:108), ]
-    var lightBlueColorScheme: [Colors] = []
-    var lightOrangeColorScheme: [Colors] = []
-    var pinkAndPurpleColorScheme: [Colors] = []
-    var darkModeColorScheme: [Colors] = []
+     var lightBlueColorScheme: [Colors] = [Colors(redComponent:135, greenComponent:189, blueComponent:216), Colors(redComponent:183, greenComponent:215, blueComponent:232), Colors(redComponent:207, greenComponent:224, blueComponent:232), Colors(redComponent:218, greenComponent:235, blueComponent:232)]
+    
+    var brownVarietyColorScheme: [Colors] = [Colors(redComponent:185, greenComponent:147, blueComponent:108), Colors(redComponent:218, greenComponent:194, blueComponent:146), Colors(redComponent:230, greenComponent:226, blueComponent:211), Colors(redComponent:196, greenComponent:183, blueComponent:166)]
+    
+   
+    
+    var lightOrangeColorScheme: [Colors] = [Colors(redComponent:224, greenComponent:135, blueComponent:106), Colors(redComponent:244, greenComponent:166, blueComponent:136), Colors(redComponent:249, greenComponent:204, blueComponent:172), Colors(redComponent:251, greenComponent:239, blueComponent:204)]
+  
+    var pinkAndPurpleColorScheme: [Colors] = [Colors(redComponent:200, greenComponent:51, blueComponent:73), Colors(redComponent:224, greenComponent:99, blueComponent:119), Colors(redComponent:238, greenComponent:172, blueComponent:153), Colors(redComponent:249, greenComponent:213, blueComponent:229)]
+    
+    var darkModeColorScheme: [Colors] = [Colors(redComponent:28, greenComponent:28, blueComponent:36), Colors(redComponent:177, greenComponent:93, blueComponent:41), Colors(redComponent:123, greenComponent:154, blueComponent:185), Colors(redComponent:75, greenComponent:119, blueComponent:165)]
     
     var currentColorSchemeName: String = ""
     var currentColorScheme: [Colors] = []
-    var currentFontSize: Int = 0
     var currentFont: String = ""
     
-    var arrayOfColorSchemeNames: [String] = ["Brown Variety", "Light Blue","Light Orange", "Pink and Purple", "Dark Mode" ]
-    var arrayOfFonts: [String] = ["AmericanTypewriter", "ArialMT", "Avenir-Black", "Baskerville","ChalkboardSE-Regular", "Helvetica", "TimesNewRomanPSMT ", "Verdana"]
-    var arrayOfFontSizes: [Int] = [14,15,16,17,18,19,20]
+    var arrayOfColorSchemeNames: [String] = ["Light Blue", "Brown Variety", "Light Orange", "Pink and Purple", "Dark Mode" ]
+    var arrayOfFonts: [String] = ["Helvetica", "AmericanTypewriter", "ArialMT", "Avenir-Black", "Baskerville","ChalkboardSE-Regular", "TimesNewRomanPSMT ", "Verdana"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,31 +53,25 @@ class DisplaySettings: UIViewController, UIPickerViewDataSource, UIPickerViewDel
 
             currentColorScheme = arrayOfColorSchemes[row]
            return arrayOfColorSchemeNames[row] //Let's sort this out tomorrow
-        } else if pickerView == fontPickerView {
+        } else  {
             currentFont = arrayOfFonts[row]
             return arrayOfFonts[row]
-        } else {
-            currentFontSize = arrayOfFontSizes[row]
-            return String(arrayOfFontSizes[row])
         }
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         if pickerView == colorSchemePickerView {
            return arrayOfColorSchemeNames.count
-        } else if pickerView == fontPickerView {
-           return arrayOfFonts.count
         } else {
-           return arrayOfFontSizes.count
+           return arrayOfFonts.count
         }
     }
 
 
     
     @IBAction func applySettings(_ sender: Any) {
-        globalVariables.currentSettings = Settings(colorScheme: currentColorScheme, fontSize: currentFontSize, font: currentFont)
+        globalVariables.currentSettings = Settings(colorScheme: currentColorScheme, font: currentFont)
         
-        print(globalVariables.currentSettings.fontSize)
         print(globalVariables.currentSettings.colorScheme)
         print(globalVariables.currentSettings.font)
     }

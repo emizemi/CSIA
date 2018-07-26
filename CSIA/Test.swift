@@ -87,7 +87,7 @@ class Test: UIViewController {
         
         hello.font = UIFont(name: "AmericanTypewriter", size: 30)
         
-    
+    print(CGFloat(globalVariables.currentSettings.colorScheme[1].redComponent))
     }
 
     override func didReceiveMemoryWarning() {

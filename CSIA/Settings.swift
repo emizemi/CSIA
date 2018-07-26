@@ -12,15 +12,13 @@ class Settings{
     
   
     var colorScheme: [Colors] = []
-    var fontSize: Int
     var font: String
 
   //Will probs not include this
   //  var notifications: Bool
 
-    init(colorScheme:[Colors], fontSize:Int, font:String) {
+    init(colorScheme:[Colors], font:String) {
         self.colorScheme = colorScheme
-        self.fontSize = fontSize
         self.font = font
     }
     
@@ -29,9 +27,7 @@ class Settings{
     }
     
     
-    func getFontSize () -> Int {
-        return self.fontSize
-    }
+  
     
     func getFont () -> String {
         return self.font
