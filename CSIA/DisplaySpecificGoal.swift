@@ -10,6 +10,7 @@ import UIKit
 
 class DisplaySpecificGoal: UIViewController,UICollectionViewDataSource,UICollectionViewDelegate {
     
+    @IBOutlet weak var collectionView: UICollectionView!
     
     
 
@@ -17,7 +18,12 @@ class DisplaySpecificGoal: UIViewController,UICollectionViewDataSource,UICollect
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var dateAddedLabel: UILabel!
     
+    override func viewDidAppear(_ animated: Bool) {
+        print("Back to the Specific Goal View view did appear")
+    }
     override func viewDidLoad() {
+        
+       
         super.viewDidLoad()
         titleLabel.text = globalVariables.selectedGoal.title
         descriptionLabel.text = globalVariables.selectedGoal.description
@@ -63,12 +69,13 @@ class DisplaySpecificGoal: UIViewController,UICollectionViewDataSource,UICollect
         globalVariables.checkInKey = count - 1
         
         count = 0
+        if UserDefaults.standard.string(forKey: String(count) + "checkInTitle" + String(globalVariables.selectedGoal.index)) != nil {
         repeat{
             checkInTitleArray.append(UserDefaults.standard.string(forKey: String(count) + "checkInTitle" + String(globalVariables.selectedGoal.index))!)
             count = count + 1
         } while count <= globalVariables.checkInKey
         
-        
+        }
         return checkInTitleArray.count
     }
     
@@ -85,7 +92,7 @@ class DisplaySpecificGoal: UIViewController,UICollectionViewDataSource,UICollect
             count = count + 1
         } while count <= globalVariables.checkInKey
         
-        
+    
         var checkInDateAddedArray = [String]()
         count = -1
         repeat{
@@ -101,7 +108,6 @@ class DisplaySpecificGoal: UIViewController,UICollectionViewDataSource,UICollect
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CollectionViewCell
         cell.checkInTitleLabel.text = checkInTitleArray[indexPath.item]
         cell.checkInDateAddedLabel.text = checkInDateAddedArray[indexPath.item]
-        
         return cell
     }
     
@@ -154,6 +160,10 @@ class DisplaySpecificGoal: UIViewController,UICollectionViewDataSource,UICollect
         self.view.addSubview(popUpVC.view)
         popUpVC.didMove(toParentViewController: self)
     }
+    
+//    func reloadCollectionView(){
+//        print("hello")
+//    }
 
     /*
     // MARK: - Navigation

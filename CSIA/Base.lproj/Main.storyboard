@@ -129,7 +129,7 @@
                                 <state key="normal" title="X"/>
                                 <connections>
                                     <action selector="backButton:" destination="EiN-gb-Hk6" eventType="touchUpInside" id="BoZ-Et-S3U"/>
-                                    <segue destination="zRH-ff-jXE" kind="show" id="vGr-HJ-CdP"/>
+                                    <segue destination="zRH-ff-jXE" kind="show" id="JZv-xA-dqu"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sIY-kK-Kwd">
@@ -479,6 +479,7 @@
                         <viewLayoutGuide key="safeArea" id="SUN-eG-SDu"/>
                     </view>
                     <connections>
+                        <outlet property="collectionView" destination="FOK-TN-mA6" id="hrs-wO-oWB"/>
                         <outlet property="dateAddedLabel" destination="g7w-Op-VJK" id="Gaa-Ms-rds"/>
                         <outlet property="descriptionLabel" destination="UWn-2A-aVh" id="C0q-1f-3e3"/>
                         <outlet property="titleLabel" destination="8qQ-Y9-9x2" id="g8q-3T-FI8"/>
@@ -699,6 +700,6 @@
         <image name="SolidBlackColor" width="1920" height="1080"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="PHl-e3-m7N"/>
+        <segue reference="JZv-xA-dqu"/>
     </inferredMetricsTieBreakers>
 </document>

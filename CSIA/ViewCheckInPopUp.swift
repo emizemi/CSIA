@@ -85,6 +85,7 @@ class ViewCheckInPopUp: UIViewController {
             currentIndex = currentIndex + 1
         } while UserDefaults.standard.object(forKey: String(currentIndex) + "checkInTitle" + String(globalVariables.selectedGoal.index)) != nil
         
+        
         self.removeAnimate()
         
         //tableView.reloadData()

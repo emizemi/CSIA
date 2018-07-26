@@ -86,9 +86,10 @@ class AddCheckInPopUp: UIViewController {
         UserDefaults.standard.set(newCheckIn.value, forKey: String(globalVariables.checkInKey) + "checkInValue" + String(globalVariables.selectedGoal.index))
         UserDefaults.standard.set(newCheckIn.dateAdded, forKey: String(globalVariables.checkInKey) + "checkInDateAdded" + String(globalVariables.selectedGoal.index))
         
+//        DisplaySpecificGoal().reloadCollectionView()
         self.view.removeFromSuperview()
 
-        //Adds checkin to checkInTitle1
+//        Adds checkin to checkInTitle1
         //Or checkInValue3
     }
     
