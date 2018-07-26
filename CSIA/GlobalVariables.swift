@@ -22,10 +22,12 @@ struct globalVariables {
     static var selectedReflectionText = ""
     static var selectedReflectionDateAdded = ""
     static var selectedReflectionQuestions = [""]
+    static var isGuidedReflection = true
     
     static var checkInKey = -1
     static var selectedCheckIn = CheckIn(title: "", value: 0, dateAdded: "")
     static var selectedCheckInValue = 0
     static var selectedCheckInIndex = 0
+    
 
 }

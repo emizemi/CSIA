@@ -9,10 +9,6 @@
 import UIKit
 
 class AddReflection: UIViewController {
-    @IBAction func backButton(_ sender: UIButton) {
-        print("Button worked")
-         navigationController?.popViewController(animated: true)
-    }
     
     @IBOutlet weak var textInput: UITextView!
     
@@ -44,6 +40,8 @@ class AddReflection: UIViewController {
         
         UserDefaults.standard.set(newReflection.text, forKey: String(globalVariables.reflectionKey) + "reflectionText")
         UserDefaults.standard.set(newReflection.dateAdded, forKey: String(globalVariables.reflectionKey) + "reflectionDateAdded")
+        UserDefaults.standard.set(false, forKey: String(globalVariables.reflectionKey) + "reflectionIsGuided")
+
         
         
         textInput.text = ""

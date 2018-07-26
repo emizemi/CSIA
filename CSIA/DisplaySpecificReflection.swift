@@ -12,6 +12,12 @@ class DisplaySpecificReflection: UIViewController {
 
     @IBOutlet weak var dateAddedLabel: UILabel!
     @IBOutlet weak var textLabel: UILabel!
+    @IBOutlet weak var typeLabel: UILabel!
+    @IBOutlet weak var questionLabel: UILabel!
+    @IBOutlet weak var firstQuestionLabel: UILabel!
+    
+    @IBOutlet weak var secondQuestionLabel: UILabel!
+    @IBOutlet weak var thirdQuestionLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,9 +25,22 @@ class DisplaySpecificReflection: UIViewController {
         // Do any additional setup after loading the view.
         
         //IF STATEMENT
-        dateAddedLabel.text = globalVariables.selectedReflection.dateAdded
-        textLabel.text = globalVariables.selectedReflection.text
-
+        if globalVariables.isGuidedReflection {
+            typeLabel.text = "Guided Reflection"
+        dateAddedLabel.text = globalVariables.selectedReflectionDateAdded
+        textLabel.text = globalVariables.selectedReflectionText
+            firstQuestionLabel.text = globalVariables.selectedReflectionQuestions[0]
+            secondQuestionLabel.text = globalVariables.selectedReflectionQuestions[1]
+            thirdQuestionLabel.text = globalVariables.selectedReflectionQuestions[2]
+        } else {
+            typeLabel.text = "Free Reflection"
+            dateAddedLabel.text = globalVariables.selectedReflectionDateAdded
+            textLabel.text = globalVariables.selectedReflectionText
+            questionLabel.text = ""
+            firstQuestionLabel.text = ""
+            secondQuestionLabel.text = ""
+            thirdQuestionLabel.text = ""
+        }
 
     }
 

@@ -17,12 +17,26 @@ class DisplayReflections: UIViewController, UITableViewDelegate, UITableViewData
     var isSearching = false
     
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        globalVariables.selectedReflectionText = UserDefaults.standard.string(forKey: String(indexPath.row) + "reflectionText")!
-
-        globalVariables.selectedReflectionDateAdded = UserDefaults.standard.string(forKey: String(indexPath.row) + "reflectionDateAdded")!
         
+//        if UserDefaults.standard.array(forKey: String(indexPath.row) + "reflectionQuestions")! == nil {
+        
+        if UserDefaults.standard.bool(forKey: String(indexPath.row) + "reflectionIsGuided") == false {
+            globalVariables.isGuidedReflection = false
+        globalVariables.selectedReflectionText = UserDefaults.standard.string(forKey: String(indexPath.row) + "reflectionText")!
+        globalVariables.selectedReflectionDateAdded = UserDefaults.standard.string(forKey: String(indexPath.row) + "reflectionDateAdded")!
+        } else {
+            globalVariables.isGuidedReflection = true
+            globalVariables.selectedReflectionText = UserDefaults.standard.string(forKey: String(indexPath.row) + "reflectionText")!
+            globalVariables.selectedReflectionDateAdded = UserDefaults.standard.string(forKey: String(indexPath.row) + "reflectionDateAdded")!
+            globalVariables.selectedReflectionQuestions = UserDefaults.standard.array(forKey: String(indexPath.row) + "reflectionQuestions")! as! [String]
+        }
         //INSERT AN IF STATEMENT OF SOME SORT IF A GUIDED REFLECTION IS SELECTED
-        globalVariables.selectedReflection =  Reflection(text: globalVariables.selectedReflectionText, dateAdded:globalVariables.selectedReflectionDateAdded)
+        
+//        if globalVariables.isGuidedReflection{
+//              globalVariables.selectedReflection =  GuidedReflection(text: globalVariables.selectedReflectionText, dateAdded: globalVariables.selectedReflectionDateAdded, questions: globalVariables.selectedReflectionQuestions)
+//        } else {
+//              globalVariables.selectedReflection =  Reflection(text: globalVariables.selectedReflectionText, dateAdded:globalVariables.selectedReflectionDateAdded)
+//        }
         performSegue(withIdentifier: "reflectionSegue", sender: self)
 
     }
