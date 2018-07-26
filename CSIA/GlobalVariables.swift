@@ -29,5 +29,6 @@ struct globalVariables {
     static var selectedCheckInValue = 0
     static var selectedCheckInIndex = 0
     
+    static var currentSettings = Settings(colorScheme: [], darkMode: false, fontSize: 0, font: "")
 
 }

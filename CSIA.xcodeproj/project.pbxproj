@@ -24,6 +24,10 @@
 		F5754DB321072D2E00F0883F /* Reflection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5754DB221072D2E00F0883F /* Reflection.swift */; };
 		F5B0B90B210A3DD100C6805A /* SecondTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B0B90A210A3DD100C6805A /* SecondTabBarController.swift */; };
 		F5B0B90D210A444600C6805A /* AddGuidedReflection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B0B90C210A444600C6805A /* AddGuidedReflection.swift */; };
+		F5B0B90F210A617300C6805A /* ThirdTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B0B90E210A617300C6805A /* ThirdTabBarController.swift */; };
+		F5B0B911210A627700C6805A /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B0B910210A627700C6805A /* Settings.swift */; };
+		F5B0B915210A630E00C6805A /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B0B914210A630E00C6805A /* Colors.swift */; };
+		F5B0B917210A66DD00C6805A /* DisplaySettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B0B916210A66DD00C6805A /* DisplaySettings.swift */; };
 		F5C9FB8B2106CBBB000C5AB0 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C9FB8A2106CBBB000C5AB0 /* Test.swift */; };
 		F5D06937210873F0007DA764 /* AddReflection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D06936210873F0007DA764 /* AddReflection.swift */; };
 		F5D06939210879B2007DA764 /* GuidedReflection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D06938210879B2007DA764 /* GuidedReflection.swift */; };
@@ -51,6 +55,10 @@
 		F5754DB221072D2E00F0883F /* Reflection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reflection.swift; sourceTree = "<group>"; };
 		F5B0B90A210A3DD100C6805A /* SecondTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondTabBarController.swift; sourceTree = "<group>"; };
 		F5B0B90C210A444600C6805A /* AddGuidedReflection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGuidedReflection.swift; sourceTree = "<group>"; };
+		F5B0B90E210A617300C6805A /* ThirdTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdTabBarController.swift; sourceTree = "<group>"; };
+		F5B0B910210A627700C6805A /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		F5B0B914210A630E00C6805A /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		F5B0B916210A66DD00C6805A /* DisplaySettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplaySettings.swift; sourceTree = "<group>"; };
 		F5C9FB8A2106CBBB000C5AB0 /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 		F5D06936210873F0007DA764 /* AddReflection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReflection.swift; sourceTree = "<group>"; };
 		F5D06938210879B2007DA764 /* GuidedReflection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuidedReflection.swift; sourceTree = "<group>"; };
@@ -106,6 +114,10 @@
 				F5D06936210873F0007DA764 /* AddReflection.swift */,
 				F5B0B90C210A444600C6805A /* AddGuidedReflection.swift */,
 				F570D65C2105CAEA0069FF1F /* Main.storyboard */,
+				F5B0B916210A66DD00C6805A /* DisplaySettings.swift */,
+				F5B0B910210A627700C6805A /* Settings.swift */,
+				F5B0B914210A630E00C6805A /* Colors.swift */,
+				F5B0B90E210A617300C6805A /* ThirdTabBarController.swift */,
 				F5B0B90A210A3DD100C6805A /* SecondTabBarController.swift */,
 				F5C9FB8A2106CBBB000C5AB0 /* Test.swift */,
 				F570D65F2105CAEA0069FF1F /* Assets.xcassets */,
@@ -188,6 +200,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F5B0B90D210A444600C6805A /* AddGuidedReflection.swift in Sources */,
+				F5B0B915210A630E00C6805A /* Colors.swift in Sources */,
 				F570D6712105E6380069FF1F /* Graph.swift in Sources */,
 				F57272CB2109B040007FEFA8 /* CheckIn.swift in Sources */,
 				F5754DB121071AB700F0883F /* DisplaySpecificGoal.swift in Sources */,
@@ -197,6 +210,7 @@
 				F5D06939210879B2007DA764 /* GuidedReflection.swift in Sources */,
 				F570D66B2105D3E60069FF1F /* DisplayGoals.swift in Sources */,
 				F5D06937210873F0007DA764 /* AddReflection.swift in Sources */,
+				F5B0B917210A66DD00C6805A /* DisplaySettings.swift in Sources */,
 				F5C9FB8B2106CBBB000C5AB0 /* Test.swift in Sources */,
 				F570D67B21062DF00069FF1F /* GlobalVariables.swift in Sources */,
 				F570D6592105CAEA0069FF1F /* AppDelegate.swift in Sources */,
@@ -204,6 +218,8 @@
 				F570D67521061C180069FF1F /* Goal.swift in Sources */,
 				F570D66D2105DD970069FF1F /* DisplayReflections.swift in Sources */,
 				F5D0693B21088425007DA764 /* DisplaySpecificReflection.swift in Sources */,
+				F5B0B90F210A617300C6805A /* ThirdTabBarController.swift in Sources */,
+				F5B0B911210A627700C6805A /* Settings.swift in Sources */,
 				F5754DB321072D2E00F0883F /* Reflection.swift in Sources */,
 				F570D67921061CC30069FF1F /* AddGoal.swift in Sources */,
 			);

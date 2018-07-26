@@ -33,7 +33,6 @@ class Goal {
         return self.dateAdded
     }
     
-    //Still not exactly sure if this returns an array
     func getIndex () -> Int {
         return self.index
     }
