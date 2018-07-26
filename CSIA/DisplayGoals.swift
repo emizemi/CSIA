@@ -16,7 +16,6 @@ class DisplayGoals: UIViewController, UITableViewDelegate, UITableViewDataSource
             count = count + 1
         } while UserDefaults.standard.object(forKey: String(count) + "goalTitle") != nil
         globalVariables.goalKey = count - 1
-        
         return globalVariables.goalKey + 1
     }
     

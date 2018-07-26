@@ -12,16 +12,14 @@ class Settings{
     
   
     var colorScheme: [Colors] = []
-    var darkMode: Bool
     var fontSize: Int
     var font: String
 
   //Will probs not include this
   //  var notifications: Bool
 
-    init(colorScheme:[Colors], darkMode:Bool, fontSize:Int, font:String) {
+    init(colorScheme:[Colors], fontSize:Int, font:String) {
         self.colorScheme = colorScheme
-        self.darkMode = darkMode
         self.fontSize = fontSize
         self.font = font
     }
@@ -30,9 +28,6 @@ class Settings{
         return self.colorScheme
     }
     
-    func getDarkMode () -> Bool {
-        return self.darkMode
-    }
     
     func getFontSize () -> Int {
         return self.fontSize

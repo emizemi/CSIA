@@ -9,7 +9,8 @@
 import UIKit
 
 class Test: UIViewController {
-
+    @IBOutlet weak var hello: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -83,6 +84,8 @@ class Test: UIViewController {
         print("all values")
         print(UserDefaults.standard.dictionaryRepresentation())
         print("good to go")
+        
+        hello.font = UIFont(name: "AmericanTypewriter", size: 30)
         
     
     }
