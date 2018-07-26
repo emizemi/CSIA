@@ -49,6 +49,8 @@ class AddReflection: UIViewController {
         textInput.text = ""
     }
     
+  
+    
 
     /*
     // MARK: - Navigation

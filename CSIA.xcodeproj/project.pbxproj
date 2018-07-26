@@ -22,6 +22,7 @@
 		F57272CB2109B040007FEFA8 /* CheckIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57272CA2109B040007FEFA8 /* CheckIn.swift */; };
 		F5754DB121071AB700F0883F /* DisplaySpecificGoal.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5754DB021071AB700F0883F /* DisplaySpecificGoal.swift */; };
 		F5754DB321072D2E00F0883F /* Reflection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5754DB221072D2E00F0883F /* Reflection.swift */; };
+		F5B0B90B210A3DD100C6805A /* SecondTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B0B90A210A3DD100C6805A /* SecondTabBarController.swift */; };
 		F5C9FB8B2106CBBB000C5AB0 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C9FB8A2106CBBB000C5AB0 /* Test.swift */; };
 		F5D06937210873F0007DA764 /* AddReflection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D06936210873F0007DA764 /* AddReflection.swift */; };
 		F5D06939210879B2007DA764 /* GuidedReflection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D06938210879B2007DA764 /* GuidedReflection.swift */; };
@@ -47,6 +48,7 @@
 		F57272CA2109B040007FEFA8 /* CheckIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckIn.swift; sourceTree = "<group>"; };
 		F5754DB021071AB700F0883F /* DisplaySpecificGoal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplaySpecificGoal.swift; sourceTree = "<group>"; };
 		F5754DB221072D2E00F0883F /* Reflection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reflection.swift; sourceTree = "<group>"; };
+		F5B0B90A210A3DD100C6805A /* SecondTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondTabBarController.swift; sourceTree = "<group>"; };
 		F5C9FB8A2106CBBB000C5AB0 /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 		F5D06936210873F0007DA764 /* AddReflection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReflection.swift; sourceTree = "<group>"; };
 		F5D06938210879B2007DA764 /* GuidedReflection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuidedReflection.swift; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 				F5D0693A21088425007DA764 /* DisplaySpecificReflection.swift */,
 				F5D06936210873F0007DA764 /* AddReflection.swift */,
 				F570D65C2105CAEA0069FF1F /* Main.storyboard */,
+				F5B0B90A210A3DD100C6805A /* SecondTabBarController.swift */,
 				F5C9FB8A2106CBBB000C5AB0 /* Test.swift */,
 				F570D65F2105CAEA0069FF1F /* Assets.xcassets */,
 				F570D6612105CAEA0069FF1F /* LaunchScreen.storyboard */,
@@ -184,6 +187,7 @@
 				F570D6712105E6380069FF1F /* Graph.swift in Sources */,
 				F57272CB2109B040007FEFA8 /* CheckIn.swift in Sources */,
 				F5754DB121071AB700F0883F /* DisplaySpecificGoal.swift in Sources */,
+				F5B0B90B210A3DD100C6805A /* SecondTabBarController.swift in Sources */,
 				F5D6322E2108E63000057481 /* AddCheckInPopUp.swift in Sources */,
 				F512B7C12109E04C006D26F6 /* ViewCheckInPopUp.swift in Sources */,
 				F5D06939210879B2007DA764 /* GuidedReflection.swift in Sources */,

@@ -129,7 +129,7 @@
                                 <state key="normal" title="X"/>
                                 <connections>
                                     <action selector="backButton:" destination="EiN-gb-Hk6" eventType="touchUpInside" id="BoZ-Et-S3U"/>
-                                    <segue destination="zRH-ff-jXE" kind="show" id="JZv-xA-dqu"/>
+                                    <segue destination="zBL-Zb-LgS" kind="show" id="2kZ-nl-ALe"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sIY-kK-Kwd">
@@ -139,7 +139,7 @@
                                 <state key="normal" title="Save Reflection"/>
                                 <connections>
                                     <action selector="addReflection:" destination="EiN-gb-Hk6" eventType="touchUpInside" id="Bjy-MD-vCO"/>
-                                    <segue destination="zRH-ff-jXE" kind="show" id="dOX-9s-ER6"/>
+                                    <segue destination="zBL-Zb-LgS" kind="show" id="JX7-HL-x5U"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -637,6 +637,24 @@
             </objects>
             <point key="canvasLocation" x="2669.5999999999999" y="-1092.1182266009853"/>
         </scene>
+        <!--Second Tab Bar Controller-->
+        <scene sceneID="cr2-Ba-3ao">
+            <objects>
+                <tabBarController id="zBL-Zb-LgS" customClass="SecondTabBarController" customModule="CSIA" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="NM8-Lh-0U1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="wK9-qA-GRC" kind="relationship" relationship="viewControllers" id="g8W-ze-Q5v"/>
+                        <segue destination="ix0-zk-0zN" kind="relationship" relationship="viewControllers" id="UNp-nx-IeV"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rdp-bH-79L" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1215" y="542"/>
+        </scene>
         <!--Display Specific Reflection-->
         <scene sceneID="W9m-BW-BDj">
             <objects>
@@ -658,7 +676,7 @@
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                 <state key="normal" title="Back"/>
                                 <connections>
-                                    <segue destination="zRH-ff-jXE" kind="show" id="Hfr-Cr-dtc"/>
+                                    <segue destination="zBL-Zb-LgS" kind="show" id="kPY-ME-Iwt"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date Added:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uvq-63-yab">
@@ -700,6 +718,9 @@
         <image name="SolidBlackColor" width="1920" height="1080"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="JZv-xA-dqu"/>
+        <segue reference="kPY-ME-Iwt"/>
+        <segue reference="w2S-Bj-zKi"/>
+        <segue reference="g8W-ze-Q5v"/>
+        <segue reference="UNp-nx-IeV"/>
     </inferredMetricsTieBreakers>
 </document>
