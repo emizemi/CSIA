@@ -10,6 +10,7 @@ import UIKit
 
 class DisplayGoals: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    @IBOutlet weak var tableView: UITableView!
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         var count = -1
         repeat{
@@ -18,12 +19,25 @@ class DisplayGoals: UIViewController, UITableViewDelegate, UITableViewDataSource
         globalVariables.goalKey = count - 1
         return globalVariables.goalKey + 1
     }
+
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         cell.textLabel?.text = UserDefaults.standard.string(forKey: String(indexPath.row) + "goalTitle")
         
-       cell.textLabel?.textColor = UIColor(red: CGFloat(globalVariables.currentSettings.colorScheme[1].redComponent), green:CGFloat(globalVariables.currentSettings.colorScheme[1].greenComponent), blue:CGFloat(globalVariables.currentSettings.colorScheme[1].blueComponent),alpha:1.00)
+        
+        //This indexes into the appropriate color of the selected color scheme
+       cell.textLabel?.textColor = UIColor(red: CGFloat(globalVariables.currentSettings.colorScheme[3].redComponent)/225.0, green:CGFloat(globalVariables.currentSettings.colorScheme[3].greenComponent)/225.0, blue:CGFloat(globalVariables.currentSettings.colorScheme[3].blueComponent)/225.0,alpha:1.00)
+        
+        cell.textLabel?.font = UIFont(name: globalVariables.currentSettings.font, size: 19.0)
+
+        
+        cell.backgroundColor = UIColor(red: CGFloat(globalVariables.currentSettings.colorScheme[0].redComponent)/225.0, green:CGFloat(globalVariables.currentSettings.colorScheme[0].greenComponent)/225.0, blue:CGFloat(globalVariables.currentSettings.colorScheme[0].blueComponent)/225.0,alpha:1.00)
+        
+        //JUST DIVIDE BY 225.0!
+      //cell.textLabel?.textColor = UIColor(red: 183/225.0, green:215/225.0, blue:232/225.0,alpha:1.00)
+   //    cell.textLabel?.textColor = UIColor.red
+
         
         return cell
     }
@@ -75,7 +89,9 @@ class DisplayGoals: UIViewController, UITableViewDelegate, UITableViewDataSource
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
+
+        self.view.backgroundColor = UIColor(red: CGFloat(globalVariables.currentSettings.colorScheme[1].redComponent)/225.0, green:CGFloat(globalVariables.currentSettings.colorScheme[1].greenComponent)/225.0, blue:CGFloat(globalVariables.currentSettings.colorScheme[1].blueComponent)/225.0,alpha:1.00)
+        self.tableView.backgroundColor = UIColor(red: CGFloat(globalVariables.currentSettings.colorScheme[1].redComponent)/225.0, green:CGFloat(globalVariables.currentSettings.colorScheme[1].greenComponent)/225.0, blue:CGFloat(globalVariables.currentSettings.colorScheme[1].blueComponent)/225.0,alpha:1.00)
     }
 
     override func didReceiveMemoryWarning() {

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F5059B9A21208202001F9045 /* DisplayReflectionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5059B9921208202001F9045 /* DisplayReflectionType.swift */; };
 		F512B7BF2109CE28006D26F6 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F512B7BE2109CE28006D26F6 /* CollectionViewCell.swift */; };
 		F512B7C12109E04C006D26F6 /* ViewCheckInPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F512B7C02109E04C006D26F6 /* ViewCheckInPopUp.swift */; };
 		F570D6592105CAEA0069FF1F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F570D6582105CAEA0069FF1F /* AppDelegate.swift */; };
@@ -36,6 +37,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F5059B9921208202001F9045 /* DisplayReflectionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayReflectionType.swift; sourceTree = "<group>"; };
 		F512B7BE2109CE28006D26F6 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		F512B7C02109E04C006D26F6 /* ViewCheckInPopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCheckInPopUp.swift; sourceTree = "<group>"; };
 		F570D6552105CAEA0069FF1F /* CSIA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CSIA.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -111,6 +113,7 @@
 				F5D06938210879B2007DA764 /* GuidedReflection.swift */,
 				F570D66C2105DD970069FF1F /* DisplayReflections.swift */,
 				F5D0693A21088425007DA764 /* DisplaySpecificReflection.swift */,
+				F5059B9921208202001F9045 /* DisplayReflectionType.swift */,
 				F5D06936210873F0007DA764 /* AddReflection.swift */,
 				F5B0B90C210A444600C6805A /* AddGuidedReflection.swift */,
 				F570D65C2105CAEA0069FF1F /* Main.storyboard */,
@@ -216,6 +219,7 @@
 				F570D6592105CAEA0069FF1F /* AppDelegate.swift in Sources */,
 				F512B7BF2109CE28006D26F6 /* CollectionViewCell.swift in Sources */,
 				F570D67521061C180069FF1F /* Goal.swift in Sources */,
+				F5059B9A21208202001F9045 /* DisplayReflectionType.swift in Sources */,
 				F570D66D2105DD970069FF1F /* DisplayReflections.swift in Sources */,
 				F5D0693B21088425007DA764 /* DisplaySpecificReflection.swift in Sources */,
 				F5B0B90F210A617300C6805A /* ThirdTabBarController.swift in Sources */,

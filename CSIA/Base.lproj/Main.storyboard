@@ -71,6 +71,7 @@
                     <navigationItem key="navigationItem" id="BLp-Dx-y57"/>
                     <connections>
                         <outlet property="myTableView" destination="p3S-Qn-Qoz" id="eiU-oH-us4"/>
+                        <outlet property="newReflectionButton" destination="aaw-JM-fY7" id="P07-5d-JTP"/>
                         <outlet property="searchBar" destination="qUN-2h-sRJ" id="gK5-vP-ZmZ"/>
                         <segue destination="Lqx-fk-Dxi" kind="show" identifier="reflectionSegue" id="2q0-Ez-mz0"/>
                     </connections>
@@ -159,10 +160,10 @@
             </objects>
             <point key="canvasLocation" x="2412" y="620.68965517241384"/>
         </scene>
-        <!--View Controller-->
+        <!--Display Reflection Type-->
         <scene sceneID="SCg-hP-4KF">
             <objects>
-                <viewController id="Kdz-gN-6Kg" sceneMemberID="viewController">
+                <viewController id="Kdz-gN-6Kg" customClass="DisplayReflectionType" customModule="CSIA" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tDD-3o-rhl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -207,6 +208,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="BmV-fp-2dm"/>
                     </view>
+                    <connections>
+                        <outlet property="freeButton" destination="h70-4e-jnj" id="Jal-8Z-DAV"/>
+                        <outlet property="guidedButton" destination="6Br-qB-9iE" id="vfz-he-WBC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QnF-JF-h6f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -342,6 +347,7 @@
                         <barButtonItem key="rightBarButtonItem" title="+" id="Y9c-xY-HAr"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="tableView" destination="dLz-NZ-1cy" id="s3f-ZP-KKO"/>
                         <segue destination="84x-EW-0uN" kind="show" identifier="goalSegue" id="3pt-TT-IsR"/>
                     </connections>
                 </viewController>
@@ -881,7 +887,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7gw-vH-2s9">
-                                <rect key="frame" x="206" y="87" width="112" height="21"/>
+                                <rect key="frame" x="206" y="87" width="158" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
@@ -947,7 +953,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="kPY-ME-Iwt"/>
         <segue reference="EPG-Ux-Vmr"/>
-        <segue reference="rJi-YS-r2X"/>
+        <segue reference="w2S-Bj-zKi"/>
         <segue reference="a5N-rY-xTt"/>
         <segue reference="Vdn-0z-PxM"/>
     </inferredMetricsTieBreakers>

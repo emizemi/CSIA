@@ -11,7 +11,7 @@ import UIKit
 class AddCheckInPopUp: UIViewController {
     @IBOutlet weak var progressLabel: UILabel!
     
-    var progressArray = ["Terrible","Very Bad", "Bad", "All Right", "Good", "Very Good", "Excelent"]
+    var progressArray = ["Terrible","Very Bad", "Bad", "All Right", "Good", "Very Good", "Excellent"]
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.black.withAlphaComponent(0.6)

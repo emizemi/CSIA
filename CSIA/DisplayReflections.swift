@@ -11,6 +11,7 @@ import UIKit
 //ADDBACK UISearchResultsUpdating
 class DisplayReflections: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate{
     
+    @IBOutlet weak var newReflectionButton: UIButton!
     @IBOutlet weak var myTableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
     var filteredData = [String]()
@@ -75,6 +76,15 @@ class DisplayReflections: UIViewController, UITableViewDelegate, UITableViewData
         searchBar.delegate = self
         searchBar.returnKeyType = UIReturnKeyType.done
         
+        self.newReflectionButton.backgroundColor = UIColor(red: CGFloat(globalVariables.currentSettings.colorScheme[0].redComponent)/225.0, green:CGFloat(globalVariables.currentSettings.colorScheme[0].greenComponent)/225.0, blue:CGFloat(globalVariables.currentSettings.colorScheme[0].blueComponent)/225.0,alpha:1.00)
+        
+        self.newReflectionButton.setTitleColor(UIColor(red: CGFloat(globalVariables.currentSettings.colorScheme[3].redComponent)/225.0, green:CGFloat(globalVariables.currentSettings.colorScheme[3].greenComponent)/225.0, blue:CGFloat(globalVariables.currentSettings.colorScheme[3].blueComponent)/225.0,alpha:1.00), for: .normal)
+        
+        self.newReflectionButton.titleLabel?.font = UIFont(name: globalVariables.currentSettings.font, size: 25.0)
+                                                           
+        self.view.backgroundColor = UIColor(red: CGFloat(globalVariables.currentSettings.colorScheme[1].redComponent)/225.0, green:CGFloat(globalVariables.currentSettings.colorScheme[1].greenComponent)/225.0, blue:CGFloat(globalVariables.currentSettings.colorScheme[1].blueComponent)/225.0,alpha:1.00)
+        self.myTableView.backgroundColor = UIColor(red: CGFloat(globalVariables.currentSettings.colorScheme[1].redComponent)/225.0, green:CGFloat(globalVariables.currentSettings.colorScheme[1].greenComponent)/225.0, blue:CGFloat(globalVariables.currentSettings.colorScheme[1].blueComponent)/225.0,alpha:1.00)
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -119,6 +129,13 @@ class DisplayReflections: UIViewController, UITableViewDelegate, UITableViewData
         } else {
         cell.textLabel?.text = UserDefaults.standard.string(forKey: String(indexPath.row) + "reflectionDateAdded")
         }
+        
+        cell.backgroundColor = UIColor(red: CGFloat(globalVariables.currentSettings.colorScheme[0].redComponent)/225.0, green:CGFloat(globalVariables.currentSettings.colorScheme[0].greenComponent)/225.0, blue:CGFloat(globalVariables.currentSettings.colorScheme[0].blueComponent)/225.0,alpha:1.00)
+        
+        cell.textLabel?.textColor = UIColor(red: CGFloat(globalVariables.currentSettings.colorScheme[3].redComponent)/225.0, green:CGFloat(globalVariables.currentSettings.colorScheme[3].greenComponent)/225.0, blue:CGFloat(globalVariables.currentSettings.colorScheme[3].blueComponent)/225.0,alpha:1.00)
+        
+        cell.textLabel?.font = UIFont(name: globalVariables.currentSettings.font, size: 19.0)
+        
         return cell
     }
     

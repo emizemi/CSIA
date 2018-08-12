@@ -25,6 +25,20 @@ class DisplaySpecificGoal: UIViewController,UICollectionViewDataSource,UICollect
         
        
         super.viewDidLoad()
+        self.collectionView.backgroundColor = UIColor(red: CGFloat(globalVariables.currentSettings.colorScheme[2].redComponent)/225.0, green:CGFloat(globalVariables.currentSettings.colorScheme[2].greenComponent)/225.0, blue:CGFloat(globalVariables.currentSettings.colorScheme[2].blueComponent)/225.0,alpha:1.00)
+        
+        self.view.backgroundColor = UIColor(red: CGFloat(globalVariables.currentSettings.colorScheme[0].redComponent)/225.0, green:CGFloat(globalVariables.currentSettings.colorScheme[0].greenComponent)/225.0, blue:CGFloat(globalVariables.currentSettings.colorScheme[0].blueComponent)/225.0,alpha:1.00)
+
+        self.titleLabel.textColor = UIColor(red: CGFloat(globalVariables.currentSettings.colorScheme[3].redComponent)/225.0, green:CGFloat(globalVariables.currentSettings.colorScheme[3].greenComponent)/225.0, blue:CGFloat(globalVariables.currentSettings.colorScheme[3].blueComponent)/225.0,alpha:1.00)
+        self.titleLabel.font = UIFont(name: globalVariables.currentSettings.font, size: 19.0)
+        
+        self.descriptionLabel.textColor = UIColor(red: CGFloat(globalVariables.currentSettings.colorScheme[3].redComponent)/225.0, green:CGFloat(globalVariables.currentSettings.colorScheme[3].greenComponent)/225.0, blue:CGFloat(globalVariables.currentSettings.colorScheme[3].blueComponent)/225.0,alpha:1.00)
+        self.descriptionLabel.font = UIFont(name: globalVariables.currentSettings.font, size: 19.0)
+
+        
+        self.dateAddedLabel.textColor = UIColor(red: CGFloat(globalVariables.currentSettings.colorScheme[3].redComponent)/225.0, green:CGFloat(globalVariables.currentSettings.colorScheme[3].greenComponent)/225.0, blue:CGFloat(globalVariables.currentSettings.colorScheme[3].blueComponent)/225.0,alpha:1.00)
+        self.dateAddedLabel.font = UIFont(name: globalVariables.currentSettings.font, size: 19.0)
+
         
         descriptionLabel.lineBreakMode = .byCharWrapping
         descriptionLabel.numberOfLines = 0

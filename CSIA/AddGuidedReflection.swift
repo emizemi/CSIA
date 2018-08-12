@@ -22,6 +22,14 @@ class AddGuidedReflection: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.view.backgroundColor = UIColor(red: CGFloat(globalVariables.currentSettings.colorScheme[1].redComponent)/225.0, green:CGFloat(globalVariables.currentSettings.colorScheme[1].greenComponent)/225.0, blue:CGFloat(globalVariables.currentSettings.colorScheme[1].blueComponent)/225.0,alpha:1.00)
+        
+        self.textInput.backgroundColor = UIColor(red: CGFloat(globalVariables.currentSettings.colorScheme[0].redComponent)/225.0, green:CGFloat(globalVariables.currentSettings.colorScheme[0].greenComponent)/225.0, blue:CGFloat(globalVariables.currentSettings.colorScheme[0].blueComponent)/225.0,alpha:1.00)
+        
+        self.textInput.font = UIFont(name: globalVariables.currentSettings.font, size: 15.0)
+
+        
+        
         var selectedQuestionsArray = [String]()
         
         var firstRandomNumber = arc4random_uniform(UInt32(possibleQuestionsArray.count))
