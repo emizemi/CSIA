@@ -657,7 +657,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hrd-rN-VdE">
-                                <rect key="frame" x="68" y="344" width="239" height="125"/>
+                                <rect key="frame" x="48" y="344" width="278" height="125"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date Added:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3O6-Yk-Rdn">
@@ -700,7 +700,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BzH-Ss-Mms">
-                                        <rect key="frame" x="51" y="89" width="136" height="20"/>
+                                        <rect key="frame" x="71" y="90" width="136" height="20"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                         <state key="normal" title="Delete Check-In">
@@ -953,7 +953,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="2kZ-nl-ALe"/>
         <segue reference="EPG-Ux-Vmr"/>
-        <segue reference="MJ9-qS-Ga2"/>
+        <segue reference="Rae-Rv-zTR"/>
         <segue reference="a5N-rY-xTt"/>
         <segue reference="Vdn-0z-PxM"/>
     </inferredMetricsTieBreakers>
