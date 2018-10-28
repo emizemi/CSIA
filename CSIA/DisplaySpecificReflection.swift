@@ -36,9 +36,9 @@ class DisplaySpecificReflection: UIViewController {
         
         self.textLabel.textColor = UIColor(red: CGFloat(globalVariables.currentSettings.colorScheme[3].redComponent)/225.0, green:CGFloat(globalVariables.currentSettings.colorScheme[3].greenComponent)/225.0, blue:CGFloat(globalVariables.currentSettings.colorScheme[3].blueComponent)/225.0,alpha:1.00)
         
-        textLabel.lineBreakMode = .byCharWrapping
+        textLabel.lineBreakMode = .byWordWrapping
         textLabel.numberOfLines = 0
-        textLabel.sizeToFit()
+        //textLabel.sizeToFit()
         
         // Do any additional setup after loading the view.
         

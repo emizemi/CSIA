@@ -370,16 +370,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="be1-Fn-MjZ">
-                                <rect key="frame" x="100" y="699" width="174" height="41"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
-                                <state key="normal" title="Add This Goal"/>
-                                <connections>
-                                    <action selector="addGoal:" destination="uex-S8-HkQ" eventType="touchUpInside" id="p9V-1K-vUU"/>
-                                    <segue destination="zRH-ff-jXE" kind="show" id="w2S-Bj-zKi"/>
-                                </connections>
-                            </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="vbe-99-BfK">
                                 <rect key="frame" x="37" y="149" width="300" height="76"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -410,6 +400,16 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="be1-Fn-MjZ">
+                                <rect key="frame" x="126" y="700" width="122" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <state key="normal" title="Save Goal"/>
+                                <connections>
+                                    <action selector="addGoal:" destination="uex-S8-HkQ" eventType="touchUpInside" id="p9V-1K-vUU"/>
+                                    <segue destination="zRH-ff-jXE" kind="show" id="w2S-Bj-zKi"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="4E5-3A-1g7"/>
@@ -464,7 +464,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Description Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UWn-2A-aVh">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Description Label" textAlignment="natural" lineBreakMode="middleTruncation" numberOfLines="0" baselineAdjustment="none" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UWn-2A-aVh">
                                 <rect key="frame" x="39" y="205" width="279" height="248"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -569,7 +569,7 @@
                     <connections>
                         <outlet property="collectionView" destination="FOK-TN-mA6" id="hrs-wO-oWB"/>
                         <outlet property="dateAddedLabel" destination="g7w-Op-VJK" id="Gaa-Ms-rds"/>
-                        <outlet property="descriptionLabel" destination="UWn-2A-aVh" id="C0q-1f-3e3"/>
+                        <outlet property="descriptionLabel" destination="UWn-2A-aVh" id="uOP-9a-BSD"/>
                         <outlet property="titleLabel" destination="8qQ-Y9-9x2" id="g8q-3T-FI8"/>
                     </connections>
                 </viewController>
@@ -951,9 +951,9 @@
         <image name="SolidBlackColor" width="1920" height="1080"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="kPY-ME-Iwt"/>
+        <segue reference="2kZ-nl-ALe"/>
         <segue reference="EPG-Ux-Vmr"/>
-        <segue reference="w2S-Bj-zKi"/>
+        <segue reference="MJ9-qS-Ga2"/>
         <segue reference="a5N-rY-xTt"/>
         <segue reference="Vdn-0z-PxM"/>
     </inferredMetricsTieBreakers>

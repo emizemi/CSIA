@@ -23,6 +23,10 @@ class DisplaySpecificGoal: UIViewController,UICollectionViewDataSource,UICollect
     }
     override func viewDidLoad() {
         
+        
+        descriptionLabel.lineBreakMode = .byWordWrapping
+        descriptionLabel.numberOfLines = 0
+      //  descriptionLabel.sizeToFit()
        
         super.viewDidLoad()
         self.collectionView.backgroundColor = UIColor(red: CGFloat(globalVariables.currentSettings.colorScheme[2].redComponent)/225.0, green:CGFloat(globalVariables.currentSettings.colorScheme[2].greenComponent)/225.0, blue:CGFloat(globalVariables.currentSettings.colorScheme[2].blueComponent)/225.0,alpha:1.00)
@@ -40,9 +44,6 @@ class DisplaySpecificGoal: UIViewController,UICollectionViewDataSource,UICollect
         self.dateAddedLabel.font = UIFont(name: globalVariables.currentSettings.font, size: 19.0)
 
         
-        descriptionLabel.lineBreakMode = .byCharWrapping
-        descriptionLabel.numberOfLines = 0
-        descriptionLabel.sizeToFit()
         titleLabel.text = globalVariables.selectedGoal.title
         descriptionLabel.text = globalVariables.selectedGoal.description
         dateAddedLabel.text = globalVariables.selectedGoal.dateAdded
