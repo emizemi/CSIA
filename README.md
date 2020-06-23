@@ -1,6 +1,4 @@
 # Self-Improver
-An iPhone app that I built for a school project. 
-
 Self-Improver solves a problem that many people face in their lives: not managing their time efficiently. Hence, the main goal of self-improver is to help people manage their time better and to help them achieve certain goals that they’ve set for themselves.
 
 The main features of Self-Improver are the ability for users to set different goals they have for themselves, a way for users to write self-reflections on how they've been progressing on their goals, and a settings page that lets the user customise how the app looks like.
