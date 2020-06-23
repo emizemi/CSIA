@@ -5,7 +5,7 @@ Self-Improver solves a problem that many people face in their lives: not managin
 
 The main features of Self-Improver are the ability for users to set different goals they have for themselves, a way for users to write self-reflections on how they've been progressing on their goals, and a settings page that lets the user customise how the app looks like.
 
-Self-Improver was built using Swift and Xcode.
+Self-Improver was built with Xcode.
 
 ## A video demonstration of Self-Improver
 https://tinyurl.com/ybs2soob
