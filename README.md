@@ -6,7 +6,7 @@ The main features of Self-Improver are the ability for users to set different go
 Self-Improver was built with Xcode.
 
 ## A video demonstration of Self-Improver
-https://tinyurl.com/ybs2soob
+https://tinyurl.com/yboux3p3
 
 ## An in depth overview on how I built Self-Improver
 https://tinyurl.com/yaa3fwce
